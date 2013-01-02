@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 
-  font-family: Georgia, Palatino, Times, 'Times New Roman', sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 body {
@@ -11,15 +11,16 @@ body {
 
 a {
   text-decoration: none;
+  color: #149C12;
 }
 
 a:link,
 a:visited {
-  color: #f30;
+  color: #149C12;
 }
 
 a:hover {
-  color: #f90;
+  color: #80A834;
 }
 
 #main {
@@ -34,6 +35,7 @@ a:hover {
 #main h1 {
   font-size: 40px;
   font-weight: normal;
+  color: #238422;
 
   line-height: 40px;
 
