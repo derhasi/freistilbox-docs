@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>freistilbox docs - Configuring Drupal</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.5.0"> 
+  </head>
+  <body>
+    <div id="main">
+
+      <div id="breadcrumbs">
+        <a href="/">Home</a> ›› <a href="/advanced/">Advanced Usage</a> ›› <a href="/advanced/drupal/">Configuring Drupal</a> 
+      </div>
+
+      <div id="content">
+        <h1 id="ready-made-drupal-configuration">Ready-made Drupal Configuration</h1>
+
+<p>For the reasons explained previously, Drupal doesn’t have the permissions to modify files in its installation. This write restriction also pertains to the <code>settings.php</code> file. Because Drupal can’t write to this file during the initial installation process, you have to maintain the main settings file manually. As already mentioned, we recommend you use stage-specific file names; <code>settings.production.php</code> is the default.</p>
+
+<p>To make configuring your Drupal installation as simple as possible, we provide pre-configured settings files. By using the PHP function <code>require()</code>, you can easily include them in your main settings file.</p>
+
+<h2 id="configuring-the-website">Configuring the website</h2>
+
+<p>For each website instance, we provide a configuration file with basic settings, for example the correct reverse proxy settings:</p>
+
+<pre><code>../config/drupal/settings-DRUPALVERSION-site.php
+</code></pre>
+
+<p>Replace <code>DRUPALVERSION</code> with “d6” or “d7”.</p>
+
+<p>Here’s an example that includes the Drupal 6 site configuration for client <code>client1</code>, website instance <code>site007</code>:</p>
+
+<pre><code>require '../config/drupal/settings-d6-site.php';
+</code></pre>
+
+<h2 id="configuring-the-database">Configuring the database</h2>
+
+<p>For each database of your website instance, we provide a separate configuration file that contains all necessary credentials to access the database from Drupal. The directory path of these configuration files follows this schema:</p>
+
+<pre><code>../config/drupal/settings-DRUPALVERSION-DBID.php
+</code></pre>
+
+<p>Replace <code>DRUPALVERSION</code> with “d6” or “d7”.</p>
+
+<p>Here’s an example that includes the Drupal 6 database configuration for the database <code>db007</code>:</p>
+
+<pre><code>require '../config/drupal/settings-d6-db007.php';
+</code></pre>
+
+      </div>
+
+    </div>
+    <div id="sidebar">
+
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+
+      <h2>Sections</h2>
+      <ul>
+        <li><a href="/basics/">freistilbox Basics</a></li>
+        <li><a href="/start/">Getting Started</a></li>
+      </ul>
+
+      <h2>External links</h2>
+      <ul>
+        <li><a href="http://support.freistil.it">Help Center</a></li>
+        <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
+        <li><a href="http://www.freistil.it/">freistil IT</a></li>
+      </ul>
+
+    </div>
+  </body>
+</html>

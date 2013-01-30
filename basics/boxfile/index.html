@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>freistilbox docs - The Boxfile</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.5.0"> 
+  </head>
+  <body>
+    <div id="main">
+
+      <div id="breadcrumbs">
+        <a href="/">Home</a> ›› <a href="/basics/">The Basics of freistilbox</a> ›› <a href="/basics/boxfile/">The Boxfile</a> 
+      </div>
+
+      <div id="content">
+        <h1 id="the-boxfile">The Boxfile</h1>
+
+<p>The Boxfile is a file of the same name that is stored in the root directory of a single web application’s repository. It defines attributes that control the deployment process.</p>
+
+<p>The format of the Boxfile is YAML.</p>
+
+<p>Example:</p>
+
+<pre><code>version: 1.0
+shared_folders:
+  - sites/default/files
+env_specific_files:
+  .htaccess:
+    production: .htaccess.production
+    test: .htaccess.test
+  .htpasswd:
+    production: .htpasswd.production
+    test: .htpasswd.test
+  sites/default/settings.php:
+    production: settings.production.php
+    test: settings.test.php
+</code></pre>
+
+<h2 id="shared-folders">Shared folders</h2>
+
+<p>Shared folders are part of the application code space but need to be shared between all application servers of a cluster since they are writable by the web application.</p>
+
+<p>Public shared folders are defined in a shared_folders collection as a list of paths, relative to the application’s document root:</p>
+
+<pre><code>shared_folders:
+  - sites/default/files
+  - sites/www.example.com/files
+</code></pre>
+
+<p>Private shared folders can be directly created via SFTP/SSH in the docroot/private folder and are reachable via ../private relative to the application’s document root.</p>
+
+<h2 id="environment-specific-files">Environment-specific files</h2>
+
+<p>Environment-specific files are alternative configuration files that are used only in a specific staging environment. For example, this could be used for providing a variation of the application’s database credentials for each development stage.</p>
+
+<pre><code>env_specific_files:
+  .htaccess:
+    production: .htaccess.production
+    test: .htaccess.test
+  .htpasswd:
+    production: .htpasswd.production
+    test: .htpasswd.test
+  sites/default/settings.php:
+    production: settings.production.php
+    test: settings.test.php
+</code></pre>
+
+      </div>
+
+    </div>
+    <div id="sidebar">
+
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+
+      <h2>Sections</h2>
+      <ul>
+        <li><a href="/basics/">freistilbox Basics</a></li>
+        <li><a href="/start/">Getting Started</a></li>
+      </ul>
+
+      <h2>External links</h2>
+      <ul>
+        <li><a href="http://support.freistil.it">Help Center</a></li>
+        <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
+        <li><a href="http://www.freistil.it/">freistil IT</a></li>
+      </ul>
+
+    </div>
+  </body>
+</html>

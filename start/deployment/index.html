@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>freistilbox docs - Deploying your web application</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.5.0"> 
+  </head>
+  <body>
+    <div id="main">
+
+      <div id="breadcrumbs">
+        <a href="/">Home</a> ›› <a href="/start/">Getting Started</a> ›› <a href="/start/deployment/">Deploying your web application</a> 
+      </div>
+
+      <div id="content">
+        <p>To deploy your Drupal installation to our DrupalCONCEPT hosting platform, you transfer all the changes you’ve made to the repository to the central repository. You do this by using a simple command:</p>
+
+<pre><code>$ git push origin master
+</code></pre>
+
+<p>By doing a “push”, you transfer all changes you’ve made since you’ve cloned or updated your local repository from the central repository back to it.</p>
+
+<p>A sophisticated deployment mechanism now takes care that all Drupal frontend servers start to deliver this new version of your Drupal installation. It also chooses the correct configuration file which most of the times will be <code>settings.production.php</code>.</p>
+
+<p><i class="icon-warning-sign"> </i> Because Git is a distributed version control system, you can clone as many repositories from the central one as you like -- for example in a development team. You need to be careful, though, when you push changes from different repositories. Since these repositories tend to diverge in their commit history, pushing changes from different source repositories can lead to conflicts when those changes need to be merged together on the DrupalCONCEPT infrastructure. Those conflicts then block all further updates and can only be resolved by our tech support. That's why we recommend using a *single, central repository* to first consolidate all changes from the different developer repositories and then push those to the hosting platform.</p>
+
+<h2 id="finish-the-installation-process">Finish the installation process</h2>
+
+<p>Since the database connection is already configured, all you need to do now is run the Drupal installation script by visiting the following URL in your browser:</p>
+
+<pre><code>http://SITEID.HOSTNAME/install.php
+</code></pre>
+
+<p>For example:</p>
+
+<pre><code>http://site007.pro01.drupalconcept.net/install.php
+</code></pre>
+
+<p>Drupal will then do all remaining installation steps like creating its database tables.</p>
+
+<h2 id="and-were-running">And we’re running!</h2>
+
+<p>You can now test your website in your browser by visiting its internal test URL which has the following format:</p>
+
+<pre><code>http://SITEID.HOSTNAME/
+</code></pre>
+
+<p>For example:</p>
+
+<pre><code>http://site007.pro01.drupalconcept.net/
+</code></pre>
+
+<hr />
+
+<p>Now it’s time for some fine-tuning!</p>
+
+      </div>
+
+    </div>
+    <div id="sidebar">
+
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+
+      <h2>Sections</h2>
+      <ul>
+        <li><a href="/basics/">freistilbox Basics</a></li>
+        <li><a href="/start/">Getting Started</a></li>
+      </ul>
+
+      <h2>External links</h2>
+      <ul>
+        <li><a href="http://support.freistil.it">Help Center</a></li>
+        <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
+        <li><a href="http://www.freistil.it/">freistil IT</a></li>
+      </ul>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>freistilbox docs - Shell access</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.5.0"> 
+  </head>
+  <body>
+    <div id="main">
+
+      <div id="breadcrumbs">
+        <a href="/">Home</a> ›› <a href="/start/">Getting Started</a> ›› <a href="/start/shell/">Shell access</a> 
+      </div>
+
+      <div id="content">
+        <p>cXXs.freistilbox.net ist ein eigener Shellserver. Jede Site hat dort einen eigenen User.</p>
+
+<p>Im Verzeichnis current findest du einen zu den Webfrontends identischen Checkout, sowie Links zu private Verzeichnissen und den präparierten Konfigurationsincludes.
+Das Drupal selbst befindet sich also in current/docroot.</p>
+
+<p>Die gleiche Verbindung (s123@cXXs.freistilbox.net) wird auch für SFTP verwendet. Public files liegen in current/docroot/sites/default/files bzw. dort sie im Boxfile unter shared_folders definiert wurden.</p>
+
+<p>ssh s123@cXXs.freistilbox.net</p>
+
+<pre><code>&lt;?php
+$aliases['s123'] = array(
+  'uri' =&gt; 's123.cXX.freistilbox.net',
+  'root' =&gt; '/srv/www/freistilbox/clients/c10789/s123/current/docroot',
+  'remote-host' =&gt; 'cXXs.freistilbox.net',
+  'remote-user' =&gt; 's123',
+);
+</code></pre>
+
+      </div>
+
+    </div>
+    <div id="sidebar">
+
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+
+      <h2>Sections</h2>
+      <ul>
+        <li><a href="/basics/">freistilbox Basics</a></li>
+        <li><a href="/start/">Getting Started</a></li>
+      </ul>
+
+      <h2>External links</h2>
+      <ul>
+        <li><a href="http://support.freistil.it">Help Center</a></li>
+        <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
+        <li><a href="http://www.freistil.it/">freistil IT</a></li>
+      </ul>
+
+    </div>
+  </body>
+</html>

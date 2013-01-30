@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>freistilbox docs - Access to asset files</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.5.0"> 
+  </head>
+  <body>
+    <div id="main">
+
+      <div id="breadcrumbs">
+        <a href="/">Home</a> ›› <a href="/start/">Getting Started</a> ›› <a href="/start/sftp/">Access to asset files</a> 
+      </div>
+
+      <div id="content">
+        <p>SFTP für files
+Username: s123
+Hostname: cXXs.freistilbox.net</p>
+
+<p>We have separated the Drupal installation files from the asset directories like <code>sites/default/files</code>. This has several reasons:</p>
+
+<ol>
+  <li>While it’s useful to have all your software components (Drupal core, contrib modules, themes etc.) under version control, it makes no sense to do so for asset files. Many of these files will be created and modified by Drupal on the web frontend, for example by the “imagecache” module.</li>
+  <li>For performance reasons, the Drupal installation and the asset files are stored in different places on the DrupalCONCEPT hosting platform. </li>
+</ol>
+
+<p>For these reasons, you maintain asset files not via Git but by accessing them directly using the secure SFTP protocol.</p>
+
+<p>In your SFTP client of choice (more on that below) you then enter the hostname of the website instance (for example <code>pro1.drupalconcept.net</code>) and use the website instance ID as user name (for example <code>site007</code>).</p>
+
+<h2 id="sftp-client-software">SFTP client software</h2>
+
+<p>File transfer software capable of SFTP is available for every common operating system:</p>
+
+<ul>
+  <li><em>Windows:</em> <a href="http://winscp.net/">WinSCP</a>, <a href="http://sourceforge.net/projects/filezilla/">FileZilla</a></li>
+  <li><em>OS X:</em> <a href="http://cyberduck.ch/">Cyberduck</a>, <a href="http://panic.com/transmit/">Transmit</a></li>
+  <li><em>Linux:</em> <a href="http://sourceforge.net/projects/filezilla/">FileZilla</a></li>
+</ul>
+
+<h2 id="sftp-access-keys">SFTP access keys</h2>
+
+<p>SSH, and in extension its file transfer protocol SFTP, uses public key authentication to create secure data transfer connections. This makes it necessary that you generate a pair of keys, stored separately in a private key file (<code>id_rsa</code> or <code>id_dsa</code>) and a public key file (<code>id_rsa.pub</code> or <code>id_dsa.pub</code>). Please refer to your SFTP client’s manual how do to execute this.</p>
+
+<p>Please keep your private key file, as the name implies, private. It identifies and authorizes you and should only be accessed and used by yourself.</p>
+
+<p>To give you access to our servers, we need to install your <em>public key</em>. We ask you to send your public key to our <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#102;&#114;&#101;&#105;&#115;&#116;&#105;&#108;&#046;&#105;&#116;">technical support</a>, together with the site ID of the respective website instance. Please make sure that the public key is in the OpenSSH format (it should look similar to <code>ssh-rsa AAAAB3NzaC1yc2E... some comment</code>).</p>
+
+      </div>
+
+    </div>
+    <div id="sidebar">
+
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+
+      <h2>Sections</h2>
+      <ul>
+        <li><a href="/basics/">freistilbox Basics</a></li>
+        <li><a href="/start/">Getting Started</a></li>
+      </ul>
+
+      <h2>External links</h2>
+      <ul>
+        <li><a href="http://support.freistil.it">Help Center</a></li>
+        <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
+        <li><a href="http://www.freistil.it/">freistil IT</a></li>
+      </ul>
+
+    </div>
+  </body>
+</html>
