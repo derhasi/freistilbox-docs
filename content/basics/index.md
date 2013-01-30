@@ -2,20 +2,32 @@
 title: "The Basics of freistilbox"
 ---
 
-# The Basics of the freistilbox hosting platform
+# The basics of the freistilbox hosting platform
 
 ## Distributed Architecture
 
-On the freistilbox hosting platform, your web application is installed on one or more application servers ("boxes"), together called the "freistilbox cluster". 
+TODO: Write introductory paragraph about performance, availability, scalability.
+
+**Boxes:** On the freistilbox hosting platform, your web application is installed on one or more application servers ("boxes"), together called the "freistilbox cluster". 
+
+**SSL offloader:** TODO: Write description
+
+**Load balancer:** TODO: Write description
+
+**Caches:** TODO: Write description
+
+**Shell box:** To give you manual access to your website's asset files and the opportunity to do a remote login and execute commands directly in the freistilbox environment, another box is added to your freistilbox cluster especially for these purposes. It doesn't respond to page requests, so jobs running on this box are not likely to interfere with the delivery of your website content.
+
+**Backend:** Your web application usually uses several backend services, for example MySQL, shared storage or Apache Solr. These services run on dedicated clusters that are usually shared by a number of customers.
 
 
 
 
 ## Central deployment
 
-Distributing your web application code on the multiple nodes of a freistilbox cluster will work only if it is installed completely identical on all cluster nodes at all times. Inconsistencies, for example in the form of different cde revisions, will result in website behaviour that would at least bewilder your visitors or, in the worst case, break your website. 
+Distributing your web application code on the multiple nodes of a freistilbox cluster will work only if it is installed completely identical on all cluster nodes at all times. Inconsistencies, for example in the form of different cde revisions, will result in website behaviour that would at least confuse your visitors or, in the worst case, break your website. 
 
-To avoid these problems, we provide a centralized deployment process. You need to upload your changes only once; our infrastructure then takes care of distributing them to all affected servers within seconds.
+To avoid these problems, we provide a centralized deployment process. You need to upload your changes only once; our infrastructure then takes care of distributing them to all affected boxes within seconds.
 
 
 ## Version control with Git
