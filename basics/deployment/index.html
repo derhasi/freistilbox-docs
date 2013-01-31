@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>freistilbox docs - Deployment</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.5.0"> 
+  </head>
+  <body>
+    <div id="main">
+
+      <div id="breadcrumbs">
+        <a href="/">Home</a> ›› <a href="/basics/">freistilbox Basics</a> ›› <a href="/basics/deployment/">Deployment</a> 
+      </div>
+
+      <div id="content">
+        <h1 id="central-deployment">Central deployment</h1>
+
+<p>Distributing your web application code on the multiple nodes of a freistilbox cluster will work only if it is installed completely identical on all cluster nodes at all times. Inconsistencies, for example in the form of different code revisions, will result in website behaviour that would at least confuse your visitors or, in the worst case, break your website. </p>
+
+<p>To avoid these problems, we provide a centralized deployment process. You need to upload your changes only once; our infrastructure then takes care of distributing them to all affected boxes within seconds.</p>
+
+<h2 id="version-control-with-git">Version control with Git</h2>
+
+<p>Updating distributed services from a central code base is the ideal task for modern version control systems. We chose Git for that purpose.</p>
+
+<p>Every freistilbox website instance has its own central Git repository that stores its Drupal installation. From this central repository, all the webservers responsible for delivering your site update their local Drupal environment after every change you upload. Technically speaking, they clone the central repository.</p>
+
+<h2 id="aufbau-des-git-repository">Aufbau des Git Repository</h2>
+
+<p>Die Webanwendung muss in einem Verzeichnis docroot liegen.
+Dies ist dann auch das Documentroot für den Webserver.</p>
+
+<p>.gitignore kann dementsprechend angepasst werden.</p>
+
+<p>Boxfile ist eine Konfigurationsdatei mit der Entwickler Parameter der Hostingumgebungen (vorerst: Shared Folder und automatische Verlinkungen nach Environment) steuern können.</p>
+
+      </div>
+
+    </div>
+    <div id="sidebar">
+
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+
+      <h2>Main sections</h2>
+      <ul>
+        <li><a href="/basics/">freistilbox Basics</a></li>
+        <li><a href="/start/">Getting Started</a></li>
+        <li><a href="/advanced/">Advanced Usage</a></li>
+      </ul>
+
+      <h2>External links</h2>
+      <ul>
+        <li><a href="http://support.freistil.it">Help Center</a></li>
+        <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
+        <li><a href="http://www.freistil.it/">freistil IT</a></li>
+      </ul>
+
+    </div>
+  </body>
+</html>
