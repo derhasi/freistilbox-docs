@@ -7,6 +7,7 @@ GEM
     cri (2.3.0)
       colored (>= 1.2)
     kramdown (0.14.2)
+    mime-types (1.19)
     nanoc (3.5.0)
       cri (~> 2.2)
     rack (1.5.1)
@@ -17,4 +18,5 @@ PLATFORMS
 DEPENDENCIES
   adsf
   kramdown
+  mime-types
   nanoc
