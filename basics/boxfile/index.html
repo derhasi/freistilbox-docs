@@ -37,9 +37,15 @@
     </div>
     <div class="span10">
     <div id="main">
-      <div id="breadcrumbs">
-        <a href="/">Home</a> ›› <a href="/basics/">freistilbox Basics</a> ›› <a href="/basics/boxfile/">The Boxfile</a> 
-      </div>
+      <ul class="breadcrumb">
+        
+        
+        <li><a href="/">Home</a></li> <span class="divider">/</span>
+        
+        <li><a href="/basics/">freistilbox Basics</a></li> <span class="divider">/</span>
+        
+        <li class="active">The Boxfile</li>
+      </ul>
       <div id="content">
         <h1 id="the-boxfile">The Boxfile</h1>
 
@@ -75,7 +81,7 @@ env_specific_files:
   - sites/www.example.com/files
 </code></pre>
 
-<p>Private shared folders can be directly created via SFTP/SSH in the docroot/private folder and are reachable via ../private relative to the application’s document root.</p>
+<p><span class="label label-info">Info</span> Private shared folders can be directly created via SFTP/SSH in the docroot/private folder and are reachable via ../private relative to the application’s document root.</p>
 
 <h2 id="environment-specific-files">Environment-specific files</h2>
 

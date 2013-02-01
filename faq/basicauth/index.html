@@ -37,9 +37,15 @@
     </div>
     <div class="span10">
     <div id="main">
-      <div id="breadcrumbs">
-        <a href="/">Home</a> ›› <a href="/faq/">Frequently Asked Questions</a> ›› <a href="/faq/basicauth/">Basic Authentication</a> 
-      </div>
+      <ul class="breadcrumb">
+        
+        
+        <li><a href="/">Home</a></li> <span class="divider">/</span>
+        
+        <li><a href="/faq/">Frequently Asked Questions</a></li> <span class="divider">/</span>
+        
+        <li class="active">Basic Authentication</li>
+      </ul>
       <div id="content">
         <h1 id="how-can-i-limit-access-to-the-website-to-authorized-users">How can I limit access to the website to authorized users?</h1>
 
@@ -64,14 +70,14 @@ Require valid-user
 
 <h2 id="generate-an-encrypted-password">Generate an encrypted password</h2>
 
-<p>Then, you’ll have to create a text file named <code>.htpasswd</code>, also in the root directory of your Drupal installation. This file contains all users allowed to access the website with their encrypted passwords.</p>
+<p>Then, you’ll have to create a text file named <code>.htpasswd</code>, also in the <code>docroot</code> directory. This file contains all users allowed to access the website, together with their encrypted passwords.</p>
 
-<p>If you have access to an Apache server installation, you can use the <code>htpasswd</code> command to create the file <code>.htpasswd</code>:</p>
+<p>If you have access to an Apache server installation, you can use its <code>htpasswd</code> command to create the file <code>.htpasswd</code>:</p>
 
 <pre><code>$ htpasswd -c .htpasswd admin
 </code></pre>
 
-<p>If you want to add other users, leave out the option <code>-c</code> because it creates a new, empty file.</p>
+<p><span class="label label-info">Info</span> If you want to add other users, leave off the option <code>-c</code> because it would create a new, empty file.</p>
 
 <p>Alternatively, the website <a href="http://www.askapache.com/online-tools/htpasswd-generator/">AskApache</a> will help you. Just enter a user name and password into the form and choose “Generate .htpasswd”. You’ll find the necessary information in the rectangle titled “.htpasswd using all 4 algorithms”:</p>
 

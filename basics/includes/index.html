@@ -37,16 +37,25 @@
     </div>
     <div class="span10">
     <div id="main">
-      <div id="breadcrumbs">
-        <a href="/">Home</a> ›› <a href="/basics/">freistilbox Basics</a> ›› <a href="/basics/includes/">Includes</a> 
-      </div>
+      <ul class="breadcrumb">
+        
+        
+        <li><a href="/">Home</a></li> <span class="divider">/</span>
+        
+        <li><a href="/basics/">freistilbox Basics</a></li> <span class="divider">/</span>
+        
+        <li class="active">Includes</li>
+      </ul>
       <div id="content">
-        <p>Fertige Includes zur automatischen Konfigurations
-Im Verzeichnis current ist ein Verzeichnis config vorhanden, in dem CMS-spezifische, vorbereitete Dateien liegen, die direkt eingebunden werden können, um bestimmte die Site zu konfigurieren.</p>
+        <p>TODO: Translate to English</p>
 
-<p>Diese können aus einer Konfigurationsdatei des CMS mittels require_once(‘../config/$CMS/$DATEINAME’); (Pfadangabe ist relativ relativ zum Documentroot) eingebunden werden.</p>
+<h1 id="fertige-includes-zur-automatischen-konfiguration">Fertige Includes zur automatischen Konfiguration</h1>
 
-<p>Beispiel settings.php einer Drupal 7 Site</p>
+<p>Das Verzeichnis <code>current</code> enthält ein Unterverzeichnis <code>config</code>, in dem CMS-spezifische, vorbereitete Dateien liegen, die direkt eingebunden werden können, um bestimmte Aspekte der Webapplikation zu konfigurieren.</p>
+
+<p>Diese können aus einer Konfigurationsdatei des CMS mittels <code>require_once('../config/$CMS/$DATEINAME');</code> (Pfadangabe ist relativ relativ zum Document Root) eingebunden werden.</p>
+
+<p>Beispiel: <code>settings.php</code> einer Drupal-7-Site</p>
 
 <pre><code>&lt;?php
 require_once('../config/drupal/settings-d7-db123.php');
@@ -54,23 +63,14 @@ require_once('../config/drupal/settings-d7-site.php');
 ?&gt;
 </code></pre>
 
-<p>Drupal</p>
+<h2 id="drupal">Drupal</h2>
 
-<p>settings-d7-dbXXX.php</p>
-
-<p>Drupal 7 Datenbankkonfiguration</p>
-
-<p>settings-d6-dbXXX.php</p>
-
-<p>Drupal 6 Datenbankkonfiguration</p>
-
-<p>settings-d7-site.php</p>
-
-<p>Diverse Settings für Drupal 7 (momentan reverse_proxy)</p>
-
-<p>settings-d6-site.php</p>
-
-<p>Diverse Settings für Drupal 6 (momentan reverse_proxy)</p>
+<ul>
+  <li>Drupal 7 Datenbankkonfiguration: <code>settings-d7-dbXXX.php</code></li>
+  <li>Drupal 6 Datenbankkonfiguration: <code>settings-d6-dbXXX.php</code></li>
+  <li>Diverse Settings für Drupal 7 (momentan reverse_proxy): <code>settings-d7-site.php</code></li>
+  <li>Diverse Settings für Drupal 6 (momentan reverse_proxy): <code>settings-d6-site.php</code></li>
+</ul>
 
       </div>
     </div>

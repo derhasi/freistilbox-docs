@@ -37,9 +37,15 @@
     </div>
     <div class="span10">
     <div id="main">
-      <div id="breadcrumbs">
-        <a href="/">Home</a> ›› <a href="/basics/">freistilbox Basics</a> ›› <a href="/basics/deployment/">Deployment</a> 
-      </div>
+      <ul class="breadcrumb">
+        
+        
+        <li><a href="/">Home</a></li> <span class="divider">/</span>
+        
+        <li><a href="/basics/">freistilbox Basics</a></li> <span class="divider">/</span>
+        
+        <li class="active">Deployment</li>
+      </ul>
       <div id="content">
         <h1 id="central-deployment">Central deployment</h1>
 
@@ -54,6 +60,8 @@
 <p>Every freistilbox website instance has its own central Git repository that stores its Drupal installation. From this central repository, all the webservers responsible for delivering your site update their local Drupal environment after every change you upload. Technically speaking, they clone the central repository.</p>
 
 <h2 id="aufbau-des-git-repository">Aufbau des Git Repository</h2>
+
+<p>TODO: Translate to English</p>
 
 <p>Die Webanwendung muss in einem Verzeichnis docroot liegen.
 Dies ist dann auch das Documentroot für den Webserver.</p>
