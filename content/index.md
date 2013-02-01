@@ -14,3 +14,4 @@ You'll find a lot of interesting and essential information about freistilbox in 
 * [freistilbox Basics](basics/)
 * [Getting Started](start/)
 * [Advanced Usage](advanced/)
+* [Frequently Asked Questions](faq/)

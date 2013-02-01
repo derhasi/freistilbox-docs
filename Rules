@@ -19,7 +19,11 @@ compile '/' do
 end
 
 compile '/stylesheet/' do
-  # don’t filter or layout
+  # don't compile
+end
+
+compile '/assets/*/' do
+  # don't compile
 end
 
 compile %r{^/CNAME} do
@@ -37,6 +41,14 @@ end
 
 route '/stylesheet/' do
   '/style.css'
+end
+
+route '/assets/css/*/' do
+  @item.identifier.chop + '.' + @item[:extension]
+end
+
+route '/assets/js/*/' do
+  @item.identifier.chop + '.' + @item[:extension]
 end
 
 route %r{CNAME} do
