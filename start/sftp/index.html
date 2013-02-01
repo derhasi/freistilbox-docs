@@ -3,19 +3,42 @@
   <head>
     <meta charset="utf-8">
     <title>freistilbox docs - Access to asset files</title>
-    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/style.css" rel="stylesheet" type="text/css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
     <!-- you don't need to keep this, but it's cool for stats! -->
     <meta name="generator" content="nanoc 3.5.0"> 
   </head>
   <body>
-    <div id="main">
 
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+    <div id="sidebar">
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+      <h2>Main sections</h2>
+      <ul>
+        <li><a href="/basics/">freistilbox Basics</a></li>
+        <li><a href="/start/">Getting Started</a></li>
+        <li><a href="/advanced/">Advanced Usage</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+      <h2>External links</h2>
+      <ul>
+        <li><a href="http://support.freistil.it">Help Center</a></li>
+        <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
+        <li><a href="http://www.freistil.it/">freistil IT</a></li>
+      </ul>
+    </div>
+    </div>
+    <div class="span10">
+    <div id="main">
       <div id="breadcrumbs">
         <a href="/">Home</a> ›› <a href="/start/">Getting Started</a> ›› <a href="/start/sftp/">Access to asset files</a> 
       </div>
-
       <div id="content">
         <p>SFTP für files
 Username: s123
@@ -51,28 +74,10 @@ Hostname: cXXs.freistilbox.net</p>
 <p>To give you access to our servers, we need to install your <em>public key</em>. We ask you to send your public key to our <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#102;&#114;&#101;&#105;&#115;&#116;&#105;&#108;&#046;&#105;&#116;">technical support</a>, together with the site ID of the respective website instance. Please make sure that the public key is in the OpenSSH format (it should look similar to <code>ssh-rsa AAAAB3NzaC1yc2E... some comment</code>).</p>
 
       </div>
-
     </div>
-    <div id="sidebar">
-
-      <ul>
-        <li><a href="/">Home</a></li>
-      </ul>
-
-      <h2>Main sections</h2>
-      <ul>
-        <li><a href="/basics/">freistilbox Basics</a></li>
-        <li><a href="/start/">Getting Started</a></li>
-        <li><a href="/advanced/">Advanced Usage</a></li>
-      </ul>
-
-      <h2>External links</h2>
-      <ul>
-        <li><a href="http://support.freistil.it">Help Center</a></li>
-        <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
-        <li><a href="http://www.freistil.it/">freistil IT</a></li>
-      </ul>
-
     </div>
+  </div>
+</div>
+
   </body>
 </html>

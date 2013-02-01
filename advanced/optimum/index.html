@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>freistilbox docs - Optimal website operation</title>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/style.css" rel="stylesheet" type="text/css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.5.0"> 
+  </head>
+  <body>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+    <div id="sidebar">
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+      <h2>Main sections</h2>
+      <ul>
+        <li><a href="/basics/">freistilbox Basics</a></li>
+        <li><a href="/start/">Getting Started</a></li>
+        <li><a href="/advanced/">Advanced Usage</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+      <h2>External links</h2>
+      <ul>
+        <li><a href="http://support.freistil.it">Help Center</a></li>
+        <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
+        <li><a href="http://www.freistil.it/">freistil IT</a></li>
+      </ul>
+    </div>
+    </div>
+    <div class="span10">
+    <div id="main">
+      <div id="breadcrumbs">
+        <a href="/">Home</a> ›› <a href="/advanced/">Advanced Usage</a> ›› <a href="/advanced/optimum/">Optimal website operation</a> 
+      </div>
+      <div id="content">
+        <h1 id="requirements-for-optimal-website-operation">Requirements for optimal website operation</h1>
+
+<h2 id="application-optimization">Application optimization</h2>
+
+<p>Optimum performance requires the usage of all available caching mechanisms, for example:</p>
+
+<ul>
+  <li>Varnish to reduce application server load</li>
+  <li>APC to reduce the PHP interpreter’s load</li>
+  <li>Memcached to reduce database load</li>
+  <li>Application-internal caching to minimize compute load</li>
+</ul>
+
+<h2 id="de-coupling-external-dependencies">De-coupling external dependencies</h2>
+
+<p>For optimum availability, external services used by the application need to meet the same availability requirements as the hosting platform.</p>
+
+<h2 id="process-optimization">Process optimization</h2>
+
+<p>Quality Assurance: For optimum availability, proper application function needs to be secured by a thorough testing process.</p>
+
+<p>Technical support: To minimize the time necessary to resolve outages, our technical staff needs to be able to reach a technical contact on the customer’s side during the required on-call time.</p>
+
+<h2 id="database-optimization">Database optimization</h2>
+
+<p>Optimum database performance requires that queries are optimized for the DBMS (indexes, storage engine, query caching etc.)</p>
+
+<h2 id="storage-optimization">Storage optimization</h2>
+
+<p>Optimum storage performance requires that the filing structure adheres to requirements of the underlying file system (e.g. by limiting the number of inodes per directory).</p>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>
