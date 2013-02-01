@@ -39,9 +39,7 @@ Alternatively, the website [AskApache](http://www.askapache.com/online-tools/htp
     admin:{SHA}0DPiKuNIrrVmD8IUCuw1hQxNqZc=
     admin:TYLxBt/ftyi3w
 
-All lines contain the user name and the password, each encrypted with a different technique. We suggest using the line where the encrypted password after the colon starts with `$apr1$` (which signifies MD5 encryption).
-
-Copy line with into the file `.htpasswd`.
+All lines contain the user name and the password, each encrypted with a different technique. We suggest using the line where the encrypted password after the colon starts with `$apr1$` (which signifies MD5 encryption). Copy this line into your `.htpasswd` file.
 
 
 ## Deploy your changes
