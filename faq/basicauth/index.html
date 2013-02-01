@@ -50,7 +50,7 @@
   <li>Website ID: s42</li>
 </ul>
 
-<h2 id="how-to-configure-basic-http-authentication">How to configure Basic HTTP authentication</h2>
+<h2 id="enable-basic-http-authentication">Enable basic HTTP authentication</h2>
 
 <p>As a first step, you activate HTTP authentication so a visitor first has to enter login credentials to gain access to the website. To this purpose, append the following lines to the file <code>.htaccess</code> which should be placed in the <code>docroot</code> directory of your repository:</p>
 
@@ -83,7 +83,9 @@ admin:TYLxBt/ftyi3w
 
 <p>All lines contain the user name and the password, each encrypted with a different technique. We suggest using the line where the encrypted password after the colon starts with <code>$apr1$</code> (which signifies MD5 encryption).</p>
 
-<p>Copy this line into the file <code>.htpasswd</code>.</p>
+<p>Copy line with into the file <code>.htpasswd</code>.</p>
+
+<h2 id="deploy-your-changes">Deploy your changes</h2>
 
 <p>Commit both files, <code>.htaccess</code> and <code>.htpasswd</code>, to your repository and push it to the freistilbox platform. Your website is now protected from unauthorized looks.</p>
 
