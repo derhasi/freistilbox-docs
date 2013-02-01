@@ -10,7 +10,7 @@ There are times like, for example, a pre-launch phase, during which you want to 
 * Website ID: s42
 
 
-## How to configure Basic HTTP authentication
+## Enable basic HTTP authentication
 
 As a first step, you activate HTTP authentication so a visitor first has to enter login credentials to gain access to the website. To this purpose, append the following lines to the file `.htaccess` which should be placed in the `docroot` directory of your repository:
 
@@ -41,6 +41,9 @@ Alternatively, the website [AskApache](http://www.askapache.com/online-tools/htp
 
 All lines contain the user name and the password, each encrypted with a different technique. We suggest using the line where the encrypted password after the colon starts with `$apr1$` (which signifies MD5 encryption).
 
-Copy this line into the file `.htpasswd`.
+Copy line with into the file `.htpasswd`.
+
+
+## Deploy your changes
 
 Commit both files, `.htaccess` and `.htpasswd`, to your repository and push it to the freistilbox platform. Your website is now protected from unauthorized looks.
