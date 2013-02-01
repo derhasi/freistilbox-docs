@@ -18,6 +18,8 @@ Every freistilbox website instance has its own central Git repository that store
 
 ## Aufbau des Git Repository
 
+TODO: Translate to English
+
 Die Webanwendung muss in einem Verzeichnis docroot liegen.
 Dies ist dann auch das Documentroot für den Webserver.
 

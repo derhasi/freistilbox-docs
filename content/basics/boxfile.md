@@ -35,7 +35,7 @@ Public shared folders are defined in a shared_folders collection as a list of pa
       - sites/default/files
       - sites/www.example.com/files
 
-Private shared folders can be directly created via SFTP/SSH in the docroot/private folder and are reachable via ../private relative to the application's document root.
+<span class="label label-info">Info</span> Private shared folders can be directly created via SFTP/SSH in the docroot/private folder and are reachable via ../private relative to the application's document root.
 
 
 ## Environment-specific files

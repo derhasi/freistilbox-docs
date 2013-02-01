@@ -37,9 +37,14 @@
     </div>
     <div class="span10">
     <div id="main">
-      <div id="breadcrumbs">
-        <%= breadcrumbs_trail.map{ |crumb| link_to(crumb[:title], crumb.reps.find { |r| r.name == :default }) }.join(" ›› ") %> 
-      </div>
+      <ul class="breadcrumb">
+        <% bctrail = breadcrumbs_trail
+          bcactive = bctrail.pop %>
+        <% bctrail.each do |crumb| %>
+        <li><%= link_to(crumb[:title], crumb.reps.find { |r| r.name == :default }) %></li> <span class="divider">/</span>
+        <% end %>
+        <li class="active"><%= bcactive[:title] %></li>
+      </ul>
       <div id="content">
         <%= yield %>
       </div>

@@ -24,13 +24,13 @@ On the line starting with `AuthUserFile`, use your own customer number following
 
 ## Generate an encrypted password
 
-Then, you’ll have to create a text file named `.htpasswd`, also in the root directory of your Drupal installation. This file contains all users allowed to access the website with their encrypted passwords.
+Then, you’ll have to create a text file named `.htpasswd`, also in the `docroot` directory. This file contains all users allowed to access the website, together with their encrypted passwords.
 
-If you have access to an Apache server installation, you can use the `htpasswd` command to create the file `.htpasswd`:
+If you have access to an Apache server installation, you can use its `htpasswd` command to create the file `.htpasswd`:
 
     $ htpasswd -c .htpasswd admin
 
-If you want to add other users, leave out the option `-c` because it creates a new, empty file.
+<span class="label label-info">Info</span> If you want to add other users, leave off the option `-c` because it would create a new, empty file.
 
 Alternatively, the website [AskApache](http://www.askapache.com/online-tools/htpasswd-generator/) will help you. Just enter a user name and password into the form and choose "Generate .htpasswd". You’ll find the necessary information in the rectangle titled ".htpasswd using all 4 algorithms":
 
