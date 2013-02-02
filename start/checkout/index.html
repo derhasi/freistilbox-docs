@@ -49,47 +49,28 @@
       <div id="content">
         <h1 id="checking-out-the-site-repository">Checking out the site repository</h1>
 
-<p>With this command, you can create a clone of the website instance on your workstation:</p>
+<p>Since Git uses a distributed approach, you’re going to create a local copy of the central repository. Changes to your web application code will first be made (and hopefully tested) in this local copy and then, at a reasonable point in time, transferred to the central repository on the freistilbox hosting platform. Within seconds, the webserver(s) will be updated from the central repository and your changes become visible on the Web.</p>
 
-<pre><code>git clone s123@repo.freistilbox.net:site site123
-</code></pre>
+<h2 id="clone-the-central-application-repository">Clone the central application repository</h2>
 
-<p>Since Git uses a distributed approach, you’re going to create a local copy of the central repository. Changes to your Drupal installation will first be made (and hopefully tested) in this local copy and then, at a reasonable point in time, transferred to the central repository on the DrupalCONCEPT hosting platform. Finally, the webserver(s) will be updated from the central repository and your changes become visible on the Web.</p>
-
-<p>For customers that are new to Git, we’ve prepared this introduction: <a href="/git/git-basics/">Git Basics</a></p>
-
-<h2 id="clone-the-central-drupalconcept-repository">Clone the central DrupalCONCEPT repository</h2>
-
-<p>Let’s create your local website repository. You need to connect to your central DrupalCONCEPT repository via HTTPS using the following credentials:</p>
-
-<ul>
-  <li><code>hostname</code>: The main hostname of your DrupalCONCEPT server or cluster</li>
-  <li><code>siteid</code>: The ID of your DrupalCONCEPT website instance</li>
-  <li><code>username</code>: The Git login username of your website instance</li>
-  <li><code>password</code>: The Git login password of your website instance</li>
-</ul>
+<p>Let’s create your local website repository. You need to connect to your central application repository using your SSH key.</p>
 
 <p>The Git URL is composed of these parts as follows:</p>
 
-<pre><code>https://&lt;username&gt;:&lt;password&gt;@&lt;hostname&gt;/git/&lt;siteid&gt;
+<pre><code>ssh://SITEID@repo.freistilbox.net/~/site
 </code></pre>
 
 <p>For example:</p>
 
-<pre><code>https://site007:s3cr3t@pro01.drupalconcept.net/git/site007
+<pre><code>ssh://s123@repo.freistilbox.net/~/site
 </code></pre>
 
-<p>With the following command, you create a working copy of the DrupalCONCEPT website repository on your workstation (of course, you’ll have to replace the instance details):</p>
+<p>With the following command, you create a working copy of the application repository on your workstation (of course, you’ll have to replace the instance details):</p>
 
-<pre><code>$ git clone https://site007:s3cr3t@pro01.drupalconcept.net/git/site007
+<pre><code>$ git clone ssh://s123@repo.freistilbox.net/~/site site123
 </code></pre>
 
-<p>This command will create a directory <code>site007</code> containing a copy of the central repository. This local clone will have a connection to its original so you can easily update your local copy from the central repository and transfer your local changes back to the DrupalCONCEPT platform.</p>
-
-<p>The directory is named <code>site007</code> because Git per default uses the last part of the URL path as the clone repository’s name. If you’d like to use another name (e.g. <code>mysite</code>), simply add it as an command argument:</p>
-
-<pre><code>$ git clone https://site007:s3cr3t@pro01.drupalconcept.net/git/site007 mysite
-</code></pre>
+<p>This command will create a directory <code>site123</code> containing a copy of the central repository. This local clone will have a connection to its original so you can easily update your local copy from the central repository and transfer your local changes back to the freistilbox platform.</p>
 
 <h2 id="excluding-files-from-the-repository">Excluding files from the repository</h2>
 
@@ -97,15 +78,13 @@
 
 <p>Another important exception are the asset directories like <code>sites/default/files</code>. You have to make Git ignore all possible multisite directory names by using a pattern as described below.</p>
 
-<p>We recommend you also exclude <code>settings.php</code>, especially if you want to do a staging workflow with separate website instances. On the DrupalCONCEPT hosting platform, you can use a different configuration file for each staging instance, for example <code>settings.production.php</code> and <code>settings.staging.php</code>. Even if you don’t intend to do staging, simply use <code>settings.production.php</code>.</p>
+<p>We recommend you also exclude <code>settings.php</code>, especially if you want to do a staging workflow with separate website instances. On the freistilbox hosting platform, you can use a different configuration file for each staging instance, for example <code>settings.production.php</code> and <code>settings.staging.php</code>. Even if you don’t intend to do staging, simply use <code>settings.production.php</code>.</p>
 
 <p>So, make sure that <code>.gitignore</code> contains at least these lines:</p>
 
 <pre><code>sites/*/files
 settings.php
 </code></pre>
-
-<p>Next, you’re going to import a Drupal distribution into your repository.</p>
 
       </div>
     </div>
