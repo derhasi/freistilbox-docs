@@ -15,4 +15,4 @@ Changing a file directly on the server would
 
 There is no reliable way of feeding local changes back into the central repository. That's why we don't allow Drupal write access to its own distribution files at all. All changes to your Drupal installation have to come via the central Git repository.
 
-Of course, changes to asset files (by way of file uploads or by the ImageCache module, for example) must be possible. On our DrupalCONCEPT hosting platform, Drupal's write access -- and that's important for you to know -- is limited to its *public and private file system paths* and the *temporary directory*. In a later section, we'll show you how to configure them properly.
+Of course, changes to asset files (by way of file uploads or by the ImageCache module, for example) must be possible. On our freistilbox hosting platform, Drupal's write access -- and that's important for you to know -- is limited to its *public and private file system paths* and the *temporary directory*. In a later section, we'll show you how to configure them properly.

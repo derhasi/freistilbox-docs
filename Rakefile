@@ -8,6 +8,6 @@ end
 task :publish => :gen do
   chdir "output"
   system "git add ."
-  system "git commit"
+  system "git commit -m 'update'"
   system "git push"
 end

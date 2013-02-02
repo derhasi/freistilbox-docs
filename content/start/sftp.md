@@ -10,11 +10,11 @@ Hostname: cXXs.freistilbox.net
 We have separated the Drupal installation files from the asset directories like `sites/default/files`. This has several reasons:
 
 1. While it's useful to have all your software components (Drupal core, contrib modules, themes etc.) under version control, it makes no sense to do so for asset files. Many of these files will be created and modified by Drupal on the web frontend, for example by the "imagecache" module.
-2. For performance reasons, the Drupal installation and the asset files are stored in different places on the DrupalCONCEPT hosting platform. 
+2. For performance reasons, the Drupal installation and the asset files are stored in different places on the freistilbox hosting platform. 
 
 For these reasons, you maintain asset files not via Git but by accessing them directly using the secure SFTP protocol.
 
-In your SFTP client of choice (more on that below) you then enter the hostname of the website instance (for example `pro1.drupalconcept.net`) and use the website instance ID as user name (for example `site007`).
+In your SFTP client of choice (more on that below) you then enter the hostname of the website instance (for example `pro1.freistilbox.net`) and use the website instance ID as user name (for example `site007`).
 
 
 ## SFTP client software
