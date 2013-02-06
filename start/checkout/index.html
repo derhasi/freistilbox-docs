@@ -57,17 +57,17 @@
 
 <p>Each website has its own Git repository URL as follows:</p>
 
-<pre><code>ssh://SITEID@repo.freistilbox.net/~/site
+<pre><code>SITEID@repo.freistilbox.net:SITEID
 </code></pre>
 
 <p>For example:</p>
 
-<pre><code>ssh://s123@repo.freistilbox.net/~/site
+<pre><code>s123@repo.freistilbox.net:s123
 </code></pre>
 
 <p>With the following command, you create a working copy of the application repository on your workstation (of course, you’ll have to replace the instance details):</p>
 
-<pre><code>$ git clone ssh://s123@repo.freistilbox.net/~/site site123
+<pre><code>$ git clone s123@repo.freistilbox.net:s123 site123
 </code></pre>
 
 <p>This command will create a directory <code>site123</code> containing a copy of the central repository. This local clone will have a connection to its original so you can easily update your local copy from the central repository and transfer your local changes back to the freistilbox platform.</p>
