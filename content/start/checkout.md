@@ -13,15 +13,15 @@ Let's create your local website repository. You need to connect to your central 
 
 Each website has its own Git repository URL as follows:
 
-    ssh://SITEID@repo.freistilbox.net/~/site
+    SITEID@repo.freistilbox.net:SITEID
 
 For example:
 
-    ssh://s123@repo.freistilbox.net/~/site
+    s123@repo.freistilbox.net:s123
 
 With the following command, you create a working copy of the application repository on your workstation (of course, you'll have to replace the instance details):
 
-    $ git clone ssh://s123@repo.freistilbox.net/~/site site123
+    $ git clone s123@repo.freistilbox.net:s123 site123
   
 This command will create a directory `site123` containing a copy of the central repository. This local clone will have a connection to its original so you can easily update your local copy from the central repository and transfer your local changes back to the freistilbox platform.
 
