@@ -81,6 +81,21 @@
 <pre><code>require '../config/drupal/settings-d6-db007.php';
 </code></pre>
 
+<h2 id="creating-a-site-alias-for-drush">Creating a site alias for drush</h2>
+
+<p>With access to the <a href="/start/shell/">shell host</a> you get access to using
+site aliases with drush as well.</p>
+
+<p>This is a minimal working <code>aliases.drushrc.php</code>:</p>
+
+<p>&lt;?php
+  $aliases[‘s123’] = array(
+    ‘uri’ =&gt; ‘s123.cXX.freistilbox.net’,
+    ‘root’ =&gt; ‘/srv/www/freistilbox/clients/c98765/s123/current/docroot’,
+    ‘remote-host’ =&gt; ‘cXXs.freistilbox.net’,
+    ‘remote-user’ =&gt; ‘s123’,
+  );</p>
+
           </div>
         </div>
       </div>
