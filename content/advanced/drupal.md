@@ -33,3 +33,19 @@ Replace `DRUPALVERSION` with "d6" or "d7".
 Here's an example that includes the Drupal 6 database configuration for the database `db007`:
 
     require '../config/drupal/settings-d6-db007.php';
+
+## Creating a site alias for drush
+
+With access to the [shell host](/start/shell/) you get access to using
+site aliases with drush as well.
+
+This is a minimal working `aliases.drushrc.php`:
+
+    <?php
+    $aliases['s123'] = array(
+      'uri' => 's123.cXX.freistilbox.net',
+      'root' => '/srv/www/freistilbox/clients/c98765/s123/current/docroot',
+      'remote-host' => 'cXXs.freistilbox.net',
+      'remote-user' => 's123',
+    );
+
