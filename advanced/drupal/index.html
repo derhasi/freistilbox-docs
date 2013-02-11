@@ -88,13 +88,14 @@ site aliases with drush as well.</p>
 
 <p>This is a minimal working <code>aliases.drushrc.php</code>:</p>
 
-<p>&lt;?php
-  $aliases[‘s123’] = array(
-    ‘uri’ =&gt; ‘s123.cXX.freistilbox.net’,
-    ‘root’ =&gt; ‘/srv/www/freistilbox/clients/c98765/s123/current/docroot’,
-    ‘remote-host’ =&gt; ‘cXXs.freistilbox.net’,
-    ‘remote-user’ =&gt; ‘s123’,
-  );</p>
+<pre><code>&lt;?php
+$aliases['s123'] = array(
+  'uri' =&gt; 's123.cXX.freistilbox.net',
+  'root' =&gt; '/srv/www/freistilbox/clients/c98765/s123/current/docroot',
+  'remote-host' =&gt; 'cXXs.freistilbox.net',
+  'remote-user' =&gt; 's123',
+);
+</code></pre>
 
           </div>
         </div>
