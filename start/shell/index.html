@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>freistilbox docs - Shell access</title>
+  <title>freistilbox docs - </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
   <link href="/style.css" rel="stylesheet" type="text/css" media="screen">
@@ -44,26 +44,41 @@
             
             <li><a href="/start/">Getting Started</a></li> <span class="divider">/</span>
             
-            <li class="active">Shell access</li>
+            <li class="active"></li>
           </ul>
           <div id="content">
-            <p>cXXs.freistilbox.net ist ein eigener Shellserver. Jede Site hat dort einen eigenen User.</p>
+            <p>[[—]]
+title: Shell access
+—</p>
 
-<p>Im Verzeichnis current findest du einen zu den Webfrontends identischen Checkout, sowie Links zu private Verzeichnissen und den präparierten Konfigurationsincludes.
-Das Drupal selbst befindet sich also in current/docroot.</p>
+<h2 id="ssh">SSH</h2>
 
-<p>Die gleiche Verbindung (s123@cXXs.freistilbox.net) wird auch für SFTP verwendet. Public files liegen in current/docroot/sites/default/files bzw. dort sie im Boxfile unter shared_folders definiert wurden.</p>
+<p>cXXs.freistilbox.net is your own shell server. Every site is represented
+by its own user on this host.</p>
 
-<p>ssh s123@cXXs.freistilbox.net</p>
+<p>After logging in with</p>
 
-<pre><code>&lt;?php
-$aliases['s123'] = array(
-  'uri' =&gt; 's123.cXX.freistilbox.net',
-  'root' =&gt; '/srv/www/freistilbox/clients/c10789/s123/current/docroot',
-  'remote-host' =&gt; 'cXXs.freistilbox.net',
-  'remote-user' =&gt; 's123',
-);
+<pre><code>ssh s123@cXXs.freistilbox.net
 </code></pre>
+
+<p>you will get access to a copy of your complete site environment,
+including a <a href="/basics/filesystem/">checkout of your document root</a> as well as access to your
+<a href="/basics/boxfile/">shared folders</a> and <a href="/basics/includes/">prepared configuration files</a>.</p>
+
+<p>In the directory <code>current</code> will find a identical copy of what the
+webservers are using. The currently active deployment of you web
+application resides in <code>current/docroot</code>.</p>
+
+<h2 id="sftp">SFTP</h2>
+
+<p>With the same user you can access your site using SFTP to transfer files
+from and to your web application.</p>
+
+<p>Your public shared files can be accessed in the directory you defined in
+your <a href="/basics/boxfile/">Boxfile</a>, relative to the directory
+<code>current/docroot</code> on the shell host. </p>
+
+<p>Your private shared folders can be found in <code>current/private</code>.</p>
 
           </div>
         </div>
