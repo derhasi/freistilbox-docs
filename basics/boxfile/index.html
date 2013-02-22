@@ -78,14 +78,14 @@ env_specific_files:
 
 <p>Shared folders are part of the application code space but need to be shared between all application servers of a cluster since they are writable by the web application.</p>
 
-<p>Public shared folders are defined in a shared_folders collection as a list of paths, relative to the application’s document root:</p>
+<p>Public shared folders are defined in a collection named <code>shared_folders</code> as a list of paths relative to the application’s document root:</p>
 
 <pre><code>shared_folders:
   - sites/default/files
   - sites/www.example.com/files
 </code></pre>
 
-<p><span class="label label-info">Info</span> Private shared folders can be directly created via SFTP/SSH in the docroot/private folder and are available to the web application below the path <code>../private</code> relative to the application’s document root.</p>
+<p><span class="label label-info">Info</span> Private shared folders can be created manually via SFTP/SSH in <code>current/private</code> and are available to the web application below the path <code>../private</code> relative to the application’s document root.</p>
 
 <h2 id="environment-specific-files">Environment-specific files</h2>
 
