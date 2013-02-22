@@ -53,7 +53,11 @@
 
 <p>The format of the Boxfile is YAML.</p>
 
-<p>Example:</p>
+<p>Your website repository doesn’t necessarily contain a Boxfile from the start. So, if you need one or more of the features described below, simply create one.</p>
+
+<p><span class="label label-important">Important</span> The file name is case-sensitive. Please make sure that it starts with a capital “B”.</p>
+
+<p>Here is some example content for a Boxfile. It first defines a shared folder whose contents need to be available on all web boxes. Then, it lists a set of configuration files that are stored in the repository and need to be activated depending on the staging environment that is assigned to the website.</p>
 
 <pre><code>version: 1.0
 shared_folders:
@@ -81,11 +85,13 @@ env_specific_files:
   - sites/www.example.com/files
 </code></pre>
 
-<p><span class="label label-info">Info</span> Private shared folders can be directly created via SFTP/SSH in the docroot/private folder and are reachable via ../private relative to the application’s document root.</p>
+<p><span class="label label-info">Info</span> Private shared folders can be directly created via SFTP/SSH in the docroot/private folder and are available to the web application below the path <code>../private</code> relative to the application’s document root.</p>
 
 <h2 id="environment-specific-files">Environment-specific files</h2>
 
-<p>Environment-specific files are alternative configuration files that are used only in a specific staging environment. For example, this could be used for providing a variation of the application’s database credentials for each development stage.</p>
+<p>Environment-specific files are configuration files contained in the repository that are used only in a specific staging environment. This enables you to use a common code base both for a testing website instance and for production. You put the configuration files for both environments, for example the application’s database credentials, into the repository and define them as environment-specific. Our deployment process then chooses the right configuration file for the right environment.</p>
+
+<p>In the following example, our deployment will create a symbolic link named <code>.htaccess</code> and has it point either to <code>.htaccess.production</code> or <code>.htaccess.test</code>, depending on which website instance the repository is deployed. The same happens for <code>.htpasswd</code> and <code>sites/default/settings.php</code>.</p>
 
 <pre><code>env_specific_files:
   .htaccess:
