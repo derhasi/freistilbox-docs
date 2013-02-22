@@ -8,7 +8,11 @@ The Boxfile is a file of the same name that is stored in the root directory of a
 
 The format of the Boxfile is YAML.
 
-Example:
+Your website repository doesn't necessarily contain a Boxfile from the start. So, if you need one or more of the features described below, simply create one.
+
+<span class="label label-important">Important</span> The file name is case-sensitive. Please make sure that it starts with a capital "B".
+
+Here is some example content for a Boxfile. It first defines a shared folder whose contents need to be available on all web boxes. Then, it lists a set of configuration files that are stored in the repository and need to be activated depending on the staging environment that is assigned to the website.
 
     version: 1.0
     shared_folders:
@@ -29,18 +33,20 @@ Example:
 
 Shared folders are part of the application code space but need to be shared between all application servers of a cluster since they are writable by the web application.
 
-Public shared folders are defined in a shared_folders collection as a list of paths, relative to the application's document root:
+Public shared folders are defined in a collection named `shared_folders` as a list of paths relative to the application's document root:
 
     shared_folders:
       - sites/default/files
       - sites/www.example.com/files
 
-<span class="label label-info">Info</span> Private shared folders can be directly created via SFTP/SSH in the docroot/private folder and are reachable via ../private relative to the application's document root.
+<span class="label label-info">Info</span> Private shared folders can be created manually via SFTP/SSH in `current/private` and are available to the web application below the path `../private` relative to the application's document root.
 
 
 ## Environment-specific files
 
-Environment-specific files are alternative configuration files that are used only in a specific staging environment. For example, this could be used for providing a variation of the application's database credentials for each development stage.
+Environment-specific files are configuration files contained in the repository that are used only in a specific staging environment. This enables you to use a common code base both for a testing website instance and for production. You put the configuration files for both environments, for example the application's database credentials, into the repository and define them as environment-specific. Our deployment process then chooses the right configuration file for the right environment.
+
+In the following example, our deployment will create a symbolic link named `.htaccess` and has it point either to `.htaccess.production` or `.htaccess.test`, depending on which website instance the repository is deployed. The same happens for `.htpasswd` and `sites/default/settings.php`.
 
     env_specific_files:
       .htaccess:
