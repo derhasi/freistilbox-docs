@@ -20,7 +20,8 @@ You'll find a lot of interesting and essential information about freistilbox in 
 * [freistilbox Basics](basics/)
 * [Getting Started](start/)
 * [Advanced Usage](advanced/)
-* [Frequently Asked Questions](faq/)
+* [Frequently Asked
+Questions](https://freistil.zendesk.com/forums/21512451-FAQ)
 
 
 ## Can't find what you're looking for?
