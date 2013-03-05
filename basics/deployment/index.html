@@ -7,7 +7,7 @@
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
   <link href="/style.css" rel="stylesheet" type="text/css" media="screen">
   <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-  <meta name="generator" content="nanoc 3.5.0"> 
+  <meta name="generator" content="nanoc 3.6.1"> 
 </head>
 <body>
 
@@ -24,11 +24,11 @@
             <li><a href="/basics/">freistilbox Basics</a></li>
             <li><a href="/start/">Getting Started</a></li>
             <li><a href="/advanced/">Advanced Usage</a></li>
-            <li><a href="/faq/">FAQ</a></li>
           </ul>
           <h2>External links</h2>
           <ul>
             <li><a href="http://support.freistil.it">Help Center</a></li>
+            <li><a href="https://freistil.zendesk.com/forums/21512451-FAQ">FAQ</a></li>
             <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
             <li><a href="http://www.freistil.it/">freistil IT</a></li>
           </ul>
@@ -59,16 +59,47 @@
 
 <p>Every freistilbox website instance has its own central Git repository that stores its Drupal installation. From this central repository, all the webservers responsible for delivering your site update their local Drupal environment after every change you upload. Technically speaking, they clone the central repository.</p>
 
-<h2 id="aufbau-des-git-repository">Aufbau des Git Repository</h2>
+<h2 id="git-repository-structure">Git repository structure</h2>
 
-<p>TODO: Translate to English</p>
+<p>The Git repository should contain the following items in its root directory:</p>
 
-<p>Die Webanwendung muss in einem Verzeichnis docroot liegen.
-Dies ist dann auch das Documentroot für den Webserver.</p>
+<ul>
+  <li>the subdirectory <code>docroot</code> with your web application code,</li>
+  <li>a file named <code>Boxfile</code> which controls deployment behaviour,</li>
+  <li>and a hidden file named <code>.gitignore</code>.</li>
+</ul>
 
-<p>.gitignore kann dementsprechend angepasst werden.</p>
+<p>We’re going to explain these files and directories in detail below.</p>
 
-<p>Boxfile ist eine Konfigurationsdatei mit der Entwickler Parameter der Hostingumgebungen (vorerst: Shared Folder und automatische Verlinkungen nach Environment) steuern können.</p>
+<h3 id="docroot">docroot</h3>
+
+<p>The <code>docroot</code> directory contains the code base of your web application, for example a Drupal distribution. It will be used as document root by our webservers.</p>
+
+<p><span class="label label-important">Important</span> <code>docroot</code> should only contain application code! Make sure not to put files in there that need to be updated by your application, for example Drupal’s <code>sites/default/files</code> directory. These should be in a shared folder, as defined in the Boxfile.</p>
+
+<h3 id="boxfile">Boxfile</h3>
+
+<p>Because the Boxfile documentation needs a bit more space, we’ve put it on a separate page: <a href="boxfile.html">Boxfile</a></p>
+
+<h3 id="gitignore">.gitignore</h3>
+
+<p>Your <code>.gitignore</code> file should at least contain the following entries:</p>
+
+<pre><code>/config
+/private
+/tmp
+</code></pre>
+
+<p>You should also exclude directories that need to be shared between boxes, for example:</p>
+
+<pre><code>/docroot/sites/*/files
+</code></pre>
+
+<p>To avoid accidental checkins, we recommend you also exclude environment-specific files like</p>
+
+<pre><code>/docroot/.htaccess
+/docroot/.htpasswd
+</code></pre>
 
           </div>
         </div>
