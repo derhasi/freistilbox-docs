@@ -7,11 +7,6 @@ We use the [nanoc](http://nanoc.ws/) static site generator to build the website 
 
 ## Setup
 
-To install the necessary Ruby gems, execute the following commands in the `master` branch:
-
-    gem install bundler
-    bundle install
-
 Get the repository
 
     git clone git@github.com:freistil/freistilbox-docs.git
@@ -20,6 +15,11 @@ Check out the `gh-pages` branch:
 
     git checkout -b gh-pages origin/gh-pages
     git checkout master
+
+To install the necessary Ruby gems, execute the following commands in the `master` branch:
+
+    gem install bundler
+    bundle install
 
 
 ## Development
