@@ -40,11 +40,11 @@ task :publish => [:clean] do
     File.unlink(gif) if File.file?(gif)
     `git add -A`
     tsha = `git write-tree`.strip
-    puts "Created tree   #{tsha}"
+    puts "Created tree #{tsha}"
     if old_sha.size == 40
-      csha = `git commit-tree #{tsha} -p #{old_sha} -m '#{mesg}'`.strip
+      csha = `echo '#{mesg}' | git commit-tree #{tsha} -p #{old_sha}`.strip
     else
-      csha = `git commit-tree #{tsha} -m '#{mesg}'`.strip
+      csha = `echo '#{mesg}' | git commit-tree #{tsha}`.strip
     end
     puts "Created commit #{csha}"
     puts `git show #{csha} --stat`
