@@ -7,7 +7,7 @@
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
   <link href="/style.css" rel="stylesheet" type="text/css" media="screen">
   <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-  <meta name="generator" content="nanoc 3.6.1"> 
+  <meta name="generator" content="nanoc 3.5.0"> 
 </head>
 <body>
 
@@ -60,7 +60,7 @@
 
 <h2 id="recognizing-secure-requests">Recognizing secure requests</h2>
 
-<p>Because SSL request are decrypted before they reach your freistilboxes, your web application will always receive plain HTTP requests. In order to be able to see if a request originally came in SSL-encrypted, the SSL offloader marks those with the HTTP header “X-Forwarded-Proto” and set its value to “https”. Our web servers then set an environment variable named <code>HTTPS</code> to the value <code>on</code>.</p>
+<p>Because SSL requests are decrypted before they reach your freistilboxes, your web application will always receive plain HTTP requests. In order to be able to see if a request originally came in SSL-encrypted, the SSL offloader marks those with the HTTP header “X-Forwarded-Proto” and set its value to “https”. Our web servers then set an environment variable named <code>HTTPS</code> to the value <code>on</code>.</p>
 
 <p>In your application, you can simply test this variable to see if a request had been encrypted by its sender. </p>
 
