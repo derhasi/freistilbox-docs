@@ -16,6 +16,12 @@ Get the repository
 
     git clone git@github.com:freistil/freistilbox-docs.git
 
+Check out the `gh-pages` branch:
+
+    git checkout -b gh-pages origin/gh-pages
+    git checkout master
+
+
 ## Development
 
 Nanoc compiles the site into static files living in `./output`.  It's
