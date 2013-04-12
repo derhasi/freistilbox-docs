@@ -10,7 +10,7 @@ If you need SSL encryption for your website, freistilbox has a great feature for
 
 ## Recognizing secure requests
 
-Because SSL request are decrypted before they reach your freistilboxes, your web application will always receive plain HTTP requests. In order to be able to see if a request originally came in SSL-encrypted, the SSL offloader marks those with the HTTP header "X-Forwarded-Proto" and set its value to "https". Our web servers then set an environment variable named `HTTPS` to the value `on`.
+Because SSL requests are decrypted before they reach your freistilboxes, your web application will always receive plain HTTP requests. In order to be able to see if a request originally came in SSL-encrypted, the SSL offloader marks those with the HTTP header "X-Forwarded-Proto" and set its value to "https". Our web servers then set an environment variable named `HTTPS` to the value `on`.
 
 In your application, you can simply test this variable to see if a request had been encrypted by its sender. 
 
