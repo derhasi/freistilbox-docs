@@ -1,16 +1,14 @@
 # SSL encryption
 
-## SSL offloading
+We decrypt incoming SSL requests at the edge of our hosting infrastructure. From there on, we only need to process plain HTTP requests. This practice is called "SSL offloading" and has several advantages:
 
-If you need SSL encryption for your website, freistilbox has a great feature for you: SSL offloading. This means that SSL packets are decrypted the moment they reach the freistilbox infrastructure. The HTTP requests that were encrypted in the SSL packets are then passed on to the next system layers. This has several advantages:
-
-* HTTP caching works regardless of encryption. That way, you don't need to use "mixed mode" (i.e. delivering parts of a page unencrypted) to achieve short delivery times for page assets.
-* Your web application servers don't need to use their computing resources for decrypting requests and encrypting their responses.
+* freistilbox instances do not need to spend computing capacity on SSL, so more resources are available to your web application.
+* Content caching works for all requests. This saves even more capacity on the freistilbox instances and avoids that you need to use "mixed mode" for fast delivery.
 
 
 ## Recognizing secure requests
 
-Because SSL requests are decrypted before they reach your freistilboxes, your web application will always receive plain HTTP requests. In order to be able to see if a request originally came in SSL-encrypted, the SSL offloader marks those with the HTTP header "X-Forwarded-Proto" and set its value to "https". Our web servers then set an environment variable named `HTTPS` to the value `on`.
+Because SSL requests are decrypted before they reach a freistilbox instance, your web application will only receive plain HTTP requests. In order to be able to tell which requests originally came in encrypted, the SSL offloader marks those with the HTTP header "X-Forwarded-Proto", setting its value to "https". Our web servers then parse this HTTP header and set an environment variable named `HTTPS` to the value `on`.
 
 In your application, you can simply test this variable to see if a request had been encrypted by its sender. 
 
@@ -18,15 +16,15 @@ In PHP:
 
     if (_SERVER['HTTPS'] == "on")
 
-This variable is set by PHP for incoming SSL requests, too, so existing applications, plugins and modules should work out of the box.
+This variable is set by PHP for received SSL requests, too, so existing applications, plugins and modules should work out of the box with our configuration.
 
-If you need to test for SSL in an `.htaccess` file, there's a catch. While Apache's `mod_rewrite` has a condition named `HTTPS` built in, its result is true only if the request actually reached the box via SSL -- which, thanks to our SSL offloading, will never be the case. Therefore, you need to check the environment variable of the same name instead:
+If you need to test for SSL in an `.htaccess` file, there's a catch. While Apache's `mod_rewrite` has a condition named `HTTPS` built in, its result is true only if the request actually reached the box in encrypted form -- which will never be the case in our setting. Therefore, you need to check the environment variable of the same name instead:
 
-Does _not_ work:
+This will _not_ work:
 
     RewriteCond %{HTTPS} on
 
-Works:
+This will work:
 
     RewriteCond %{ENV:HTTPS} on
 
