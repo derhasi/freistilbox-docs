@@ -15,17 +15,13 @@ version.
 
 ### Configuration example for Drupal 7:
 
-```
-require_once('../config/drupal/settings-d7-memcache.php');  
-$conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
-```
+    require_once('../config/drupal/settings-d7-memcache.php');  
+    $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
 
 ### Configuration example for Drupal 6:
 
-```
-require_once('../config/drupal/settings-d6-memcache.php');  
-$conf['cache_inc'] = './sites/all/modules/contrib/memcache/memcache.inc';
-```
+    require_once('../config/drupal/settings-d6-memcache.php');  
+    $conf['cache_inc'] = './sites/all/modules/contrib/memcache/memcache.inc';
 
 #### Info
 
