@@ -64,12 +64,11 @@ to enter login credentials to gain access to the website. To this
 purpose, append the following lines to the file <code>.htaccess</code> which should
 be placed in the docroot directory of your repository:</p>
 
-<p><code>
-AuthType Basic  
+<pre><code>AuthType Basic  
 AuthName "Website Login"  
 AuthUserFile /srv/www/freistilbox/clients/c10000/s42/current/docroot/.htpasswd  
 Require valid-user
-</code></p>
+</code></pre>
 
 <p>On the line starting with <code>AuthUserFile</code>, use your own customer number
 following the “c” in “c10000” and your website’s ID instead of “s42”.</p>
@@ -96,12 +95,11 @@ name and password into the form and choose “Generate .htpasswd”. You’ll
 find the necessary information in the rectangle titled “.htpasswd using
 all 4 algorithms”:</p>
 
-<p><code>
-admin:Protected By AskApache:5b8e5bc85154313d6400921a8161c5a4  
+<pre><code>admin:Protected By AskApache:5b8e5bc85154313d6400921a8161c5a4  
 admin:$apr1$lHVjK05m$IfGnV3hA.uPAldtg2PLNk1  
 admin:{SHA}0DPiKuNIrrVmD8IUCuw1hQxNqZc=  
 admin:TYLxBt/ftyi3w
-</code></p>
+</code></pre>
 
 <p>All lines contain the user name and the password, each encrypted with a
 different technique. We suggest using the line where the encrypted
