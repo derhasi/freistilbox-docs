@@ -18,9 +18,9 @@ purpose, append the following lines to the file `.htaccess` which should
 be placed in the docroot directory of your repository:
 
 ```
-AuthType Basic
-AuthName "Website Login"
-AuthUserFile /srv/www/freistilbox/clients/c10000/s42/current/docroot/.htpasswd
+AuthType Basic  
+AuthName "Website Login"  
+AuthUserFile /srv/www/freistilbox/clients/c10000/s42/current/docroot/.htpasswd  
 Require valid-user
 ```
 
@@ -50,9 +50,9 @@ find the necessary information in the rectangle titled ".htpasswd using
 all 4 algorithms":
 
 ```
-admin:Protected By AskApache:5b8e5bc85154313d6400921a8161c5a4
-admin:$apr1$lHVjK05m$IfGnV3hA.uPAldtg2PLNk1
-admin:{SHA}0DPiKuNIrrVmD8IUCuw1hQxNqZc=
+admin:Protected By AskApache:5b8e5bc85154313d6400921a8161c5a4  
+admin:$apr1$lHVjK05m$IfGnV3hA.uPAldtg2PLNk1  
+admin:{SHA}0DPiKuNIrrVmD8IUCuw1hQxNqZc=  
 admin:TYLxBt/ftyi3w
 ```
 
