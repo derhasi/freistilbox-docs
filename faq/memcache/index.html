@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>freistilbox docs - Frequently asked questions</title>
+  <title>freistilbox docs - </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
   <link href="/style.css" rel="stylesheet" type="text/css" media="screen">
@@ -42,17 +42,39 @@
             
             <li><a href="/">Home</a></li> <span class="divider">/</span>
             
-            <li class="active">Frequently asked questions</li>
+            <li><a href="/faq/">Frequently asked questions</a></li> <span class="divider">/</span>
+            
+            <li class="active"></li>
           </ul>
           <div id="content">
-            <h1 id="freistilbox-faq">freistilbox FAQ</h1>
+            <p>We have already prepared configuration files with all important details
+necessary to use Memcache. Their path schema is as follows relative to
+<code>docroot</code>:</p>
 
-<ul>
-  <li><a href="cron_jobs/">How can I create cron jobs?</a></li>
-  <li><a href="authorized_users/">How can I limit access to the website to authorized users?</a></li>
-  <li><a href="memcache/">How do I configure Memcache?</a></li>
-  <li><a href="innodb_or_myisam/">Should I use InnoDB or MyISAM as database storage engine?</a></li>
-</ul>
+<p><code>../config/drupal/settings-DRUPALVERSION-memcache.php</code></p>
+
+<p>Since all the necessary details are already pre-configured in these
+files, you simply include the appropriate file in your
+<code>settings.production.php</code> and set the right caching module for your Drupal
+version.</p>
+
+<h3 id="configuration-example-for-drupal-7">Configuration example for Drupal 7:</h3>
+
+<p><code>
+require_once('../config/drupal/settings-d7-memcache.php');  
+$conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
+</code></p>
+
+<h3 id="configuration-example-for-drupal-6">Configuration example for Drupal 6:</h3>
+
+<p><code>
+require_once('../config/drupal/settings-d6-memcache.php');  
+$conf['cache_inc'] = './sites/all/modules/contrib/memcache/memcache.inc';
+</code></p>
+
+<h4 id="info">Info</h4>
+
+<p>Please note to set the correct path to the <code>memcache.inc</code> file!</p>
 
           </div>
         </div>

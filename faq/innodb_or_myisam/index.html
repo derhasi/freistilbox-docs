@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>freistilbox docs - Should I use InnoDB or MyISAM as database storage engine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="/style.css" rel="stylesheet" type="text/css" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+  <meta name="generator" content="nanoc 3.6.1"> 
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+
+      <div class="span2">
+        <div id="sidebar">
+          <ul>
+            <li><a href="/">Home</a></li>
+          </ul>
+          <h2>Main sections</h2>
+          <ul>
+            <li><a href="/basics/">freistilbox Basics</a></li>
+            <li><a href="/start/">Getting Started</a></li>
+            <li><a href="/advanced/">Advanced Usage</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+          </ul>
+          <h2>External links</h2>
+          <ul>
+            <li><a href="http://support.freistil.it">Help Center</a></li>
+            <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
+            <li><a href="http://www.freistil.it/">freistil IT</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="span10">
+        <div id="main">
+          <ul class="breadcrumb">
+            
+            
+            <li><a href="/">Home</a></li> <span class="divider">/</span>
+            
+            <li><a href="/faq/">Frequently asked questions</a></li> <span class="divider">/</span>
+            
+            <li class="active">Should I use InnoDB or MyISAM as database storage engine?</li>
+          </ul>
+          <div id="content">
+            <p>Definitively use InnoDB. InnoDB is in many aspects superior to MyISAM
+and offers a multitude of tuning possibilities. InnoDB also allows for
+consistent online backups without locking database access. Drupal 7 and
+up already uses InnoDB by default.</p>
+
+<p>For these reasons, our hosting environment is optimized for InnoDB and
+<strong>we support only the InnoDB storage engine</strong>. If your database schema still
+uses MyISAM tables, you should convert them to InnoDB. We’ve explained
+below how to do that.</p>
+
+<h2 id="converting-a-database-from-myisam-to-innodb">Converting a database from MyISAM to InnoDB</h2>
+<p>### Using SQL</p>
+
+<p>On your local MySQL server, you can convert the database tables easily
+with the <code>ALTER TABLE</code> command:</p>
+
+<p><code>ALTER TABLE tablename ENGINE=INNODB;</code></p>
+
+<p>Then you can do a database dump and transfer that onto our hosting
+platform.</p>
+
+<h3 id="using-the-db-tuner-module">Using the DB Tuner module</h3>
+
+<p>With DB Tuner, there’s a Drupal module that allows you (among other
+things) to convert MySQL tables to InnoDB.</p>
+
+<h3 id="let-our-team-do-the-conversion">Let our team do the conversion</h3>
+
+<p>Alternatively, we can convert your tables directly on the hosting
+platform; simply send us a <a href="http://support.freistil.it">support request</a>.</p>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</body>
+</html>
