@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>freistilbox docs - Includes</title>
+  <title>freistilbox docs - Frequently asked questions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
   <link href="/style.css" rel="stylesheet" type="text/css" media="screen">
@@ -42,34 +42,14 @@
             
             <li><a href="/">Home</a></li> <span class="divider">/</span>
             
-            <li><a href="/basics/">freistilbox Basics</a></li> <span class="divider">/</span>
-            
-            <li class="active">Includes</li>
+            <li class="active">Frequently asked questions</li>
           </ul>
           <div id="content">
-            <p>TODO: Translate to English</p>
-
-<h1 id="fertige-includes-zur-automatischen-konfiguration">Fertige Includes zur automatischen Konfiguration</h1>
-
-<p>Das Verzeichnis <code>current</code> enthält ein Unterverzeichnis <code>config</code>, in dem CMS-spezifische, vorbereitete Dateien liegen, die direkt eingebunden werden können, um bestimmte Aspekte der Webapplikation zu konfigurieren.</p>
-
-<p>Diese können aus einer Konfigurationsdatei des CMS mittels <code>require_once('../config/$CMS/$DATEINAME');</code> (Pfadangabe ist relativ relativ zum Document Root) eingebunden werden.</p>
-
-<p>Beispiel: <code>settings.php</code> einer Drupal-7-Site</p>
-
-<pre><code>&lt;?php
-require_once('../config/drupal/settings-d7-db123.php');
-require_once('../config/drupal/settings-d7-site.php');
-?&gt;
-</code></pre>
-
-<h2 id="drupal">Drupal</h2>
+            <h1 id="freistilbox-faq">freistilbox FAQ</h1>
 
 <ul>
-  <li>Drupal 7 Datenbankkonfiguration: <code>settings-d7-dbXXX.php</code></li>
-  <li>Drupal 6 Datenbankkonfiguration: <code>settings-d6-dbXXX.php</code></li>
-  <li>Diverse Settings für Drupal 7 (momentan reverse_proxy): <code>settings-d7-site.php</code></li>
-  <li>Diverse Settings für Drupal 6 (momentan reverse_proxy): <code>settings-d6-site.php</code></li>
+  <li><a href="cron_jobs/">How can I create cron jobs?</a></li>
+  <li><a href="authorized_users/">How can I limit access to the website to authorized users?</a></li>
 </ul>
 
           </div>

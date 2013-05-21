@@ -7,7 +7,7 @@
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
   <link href="/style.css" rel="stylesheet" type="text/css" media="screen">
   <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-  <meta name="generator" content="nanoc 3.5.0"> 
+  <meta name="generator" content="nanoc 3.6.1"> 
 </head>
 <body>
 
@@ -24,11 +24,11 @@
             <li><a href="/basics/">freistilbox Basics</a></li>
             <li><a href="/start/">Getting Started</a></li>
             <li><a href="/advanced/">Advanced Usage</a></li>
+            <li><a href="/faq/">FAQ</a></li>
           </ul>
           <h2>External links</h2>
           <ul>
             <li><a href="http://support.freistil.it">Help Center</a></li>
-            <li><a href="https://freistil.zendesk.com/forums/21512451-FAQ">FAQ</a></li>
             <li><a href="http://www.freistilbox.com/">freistilbox</a></li>
             <li><a href="http://www.freistil.it/">freistil IT</a></li>
           </ul>
@@ -47,7 +47,10 @@
             <li class="active">Database</li>
           </ul>
           <div id="content">
-            <p>Die Datenbankkonfiguration kann in settings.php über ../config/drupal/settings-d7-dbXXX.php mittels require_once eingebunden werden.</p>
+            <p>The database configuration can be included in Drupal settings.php by
+using <code>require_once('../config/drupal/settings-d7-dbXXX.php');</code>. </p>
+
+<p>You can find it on the <a href="/start/shell/">shell host</a> in the directory <code>current/config/drupal/</code> as well.</p>
 
           </div>
         </div>
