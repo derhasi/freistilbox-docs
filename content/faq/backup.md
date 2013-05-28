@@ -1,8 +1,6 @@
 ---
-title: "Frequently asked questions"
+title: "Is there a backup of my website's data?"
 ---
-
-# Q: Is there a backup of my website's data? 
 
 We do nightly (relative to UTC) backups of all your website data:
 
