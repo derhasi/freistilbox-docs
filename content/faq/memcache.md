@@ -2,6 +2,8 @@
 Title: "How do I configure Memcache?"
 ---
 
+# How do I configure Memcache?
+
 We have already prepared configuration files with all important details
 necessary to use Memcache. Their path schema is as follows relative to
 `docroot`:

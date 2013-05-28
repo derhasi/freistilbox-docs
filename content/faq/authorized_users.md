@@ -2,6 +2,8 @@
 title: "How can I limit access to the website to authorized users?"
 ---
 
+# How can I limit access to the website to authorized users?
+
 There are times like, for example, a pre-launch phase, during which you
 want to limit access to your website; unauthorized visitors shouldn't
 even get presented with a login page. In this article, you’ll find a

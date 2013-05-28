@@ -1,6 +1,8 @@
 ---
-title: "Should I use InnoDB or MyISAM as database storage engine?"
+title: "Which MySQL storage engine should i use?"
 ---
+
+# Which MySQL storage engine should i use?
 
 Definitively use InnoDB. InnoDB is in many aspects superior to MyISAM
 and offers a multitude of tuning possibilities. InnoDB also allows for

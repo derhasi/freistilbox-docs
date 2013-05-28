@@ -2,6 +2,8 @@
 title: "How do I configure cron jobs?"
 ---
 
+# How do I configure cron jobs?
+
 Just use the SSH user on your Shellhost and create a crontab yourself!
 
 This way you can define exactly what gets triggered and what not.
