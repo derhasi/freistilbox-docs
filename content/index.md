@@ -8,7 +8,7 @@ title: "Home"
 
 <p>This is the online documentation for <a href="http://www.freistilbox.com">freistilbox</a>, the next-generation managed hosting platform built and operated by <a href="http://www.freistil.it">freistil IT</a>.</p>
 
-<span class="label label-warning">Warning</span> This documentation is very much work in progress at the moment. 
+<span class="label label-warning">Warning</span> This documentation is very much work in progress at the moment.
 
 </div>
 
@@ -21,6 +21,7 @@ You'll find a lot of interesting and essential information about freistilbox in 
 * [Getting Started](start/)
 * [Advanced Usage](advanced/)
 * [Frequently Asked Questions](faq/)
+* [freistilbox Solo](solo/)
 
 
 ## Can't find what you're looking for?

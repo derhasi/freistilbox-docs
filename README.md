@@ -9,17 +9,21 @@ We use the [nanoc](http://nanoc.ws/) static site generator to build the website 
 
 Get the repository
 
-    git clone git@github.com:freistil/freistilbox-docs.git
+    $ git clone git@github.com:freistil/freistilbox-docs.git
 
 Check out the `gh-pages` branch:
 
-    git checkout -b gh-pages origin/gh-pages
-    git checkout master
+    $ git checkout -b gh-pages origin/gh-pages
+    $ git checkout master
 
 To install the necessary Ruby gems, execute the following commands in the `master` branch:
 
-    gem install bundler
-    bundle install
+    $ gem install bundler
+    $ bundle install
+
+To auto-update the website files when sources change, prepare `guard`:
+
+    $ guard init nanoc
 
 
 ## Development
@@ -52,14 +56,17 @@ gem, however (I hope so, it was in the Gemfile), you can start Webrick:
     $ nanoc view
     $ open http://localhost:3000
 
-Compilation times got you down?  Use `autocompile`!
+Compilation times got you down?  Use `guard`!
 
-    $ nanoc autocompile
+    $ guard
 
 This starts a web server too, so there's no need to run `nanoc view`.
-One thing: remember to add trailing slashes to all nanoc links!
 
-## Deploy
+*One thing: remember to add trailing slashes to all nanoc links!*
+
+
+## Deployment
+
+Upload your changes by running this command:
 
     $ rake publish
-
