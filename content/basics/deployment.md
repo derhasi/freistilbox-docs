@@ -16,13 +16,42 @@ Updating distributed services from a central code base is the ideal task for mod
 Every freistilbox website instance has its own central Git repository that stores its Drupal installation. From this central repository, all the webservers responsible for delivering your site update their local Drupal environment after every change you upload. Technically speaking, they clone the central repository.
 
 
-## Aufbau des Git Repository
+## Git repository structure
 
-TODO: Translate to English
+The Git repository should contain the following items in its root directory:
 
-Die Webanwendung muss in einem Verzeichnis docroot liegen.
-Dies ist dann auch das Documentroot für den Webserver.
+* the subdirectory `docroot` with your web application code,
+* a file named `Boxfile` which controls deployment behaviour,
+* and a hidden file named `.gitignore`.
 
-.gitignore kann dementsprechend angepasst werden.
+We're going to explain these files and directories in detail below.
 
-Boxfile ist eine Konfigurationsdatei mit der Entwickler Parameter der Hostingumgebungen (vorerst: Shared Folder und automatische Verlinkungen nach Environment) steuern können.
+
+### docroot
+
+The `docroot` directory contains the code base of your web application, for example a Drupal distribution. It will be used as document root by our webservers.
+
+<span class="label label-important">Important</span> `docroot` should only contain application code! Make sure not to put files in there that need to be updated by your application, for example Drupal's `sites/default/files` directory. These should be in a shared folder, as defined in the Boxfile.
+
+
+### Boxfile
+
+Because the Boxfile documentation needs a bit more space, we've put it on a separate page: [Boxfile](boxfile.html)
+
+
+### .gitignore
+
+Your `.gitignore` file should at least contain the following entries:
+
+    /config
+    /private
+    /tmp
+
+You should also exclude directories that need to be shared between boxes, for example:
+
+    /docroot/sites/*/files
+
+To avoid accidental checkins, we recommend you also exclude environment-specific files like
+
+    /docroot/.htaccess
+    /docroot/.htpasswd

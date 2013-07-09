@@ -2,4 +2,7 @@
 title: Database
 ---
 
-Die Datenbankkonfiguration kann in settings.php über ../config/drupal/settings-d7-dbXXX.php mittels require_once eingebunden werden.
+The database configuration can be included in Drupal settings.php by
+using `require_once('../config/drupal/settings-d7-dbXXX.php');`. 
+
+You can find it on the [shell host](/start/shell/) in the directory `current/config/drupal/` as well.

@@ -5,38 +5,68 @@ This repository contains the source documents for [docs.freistilbox.com](http://
 We use the [nanoc](http://nanoc.ws/) static site generator to build the website and Github Pages to host it.
 
 
-## Repository layout
+## Setup
 
-First, check out the source branch:
+Get the repository
 
-    git clone git@github.com:freistil/freistilbox-docs.git
+    $ git clone git@github.com:freistil/freistilbox-docs.git
 
-Then setup the nanoc `output` directory as branch `gh-pages`:
+Check out the `gh-pages` branch:
 
-    git clone git@github.com:freistil/freistilbox-docs.git output
-    cd output
-    git checkout gh-pages
+    $ git checkout -b gh-pages origin/gh-pages
+    $ git checkout master
+
+To install the necessary Ruby gems, execute the following commands in the `master` branch:
+
+    $ gem install bundler
+    $ bundle install
+
+To auto-update the website files when sources change, prepare `guard`:
+
+    $ guard init nanoc
 
 
-## Development tools
+## Development
 
-To install the necessary Ruby gems, execute the following commands in the source branch:
+Nanoc compiles the site into static files living in `./output`.  It's
+smart enough not to try to compile unchanged files:
 
-    gem install bundler
-    bundle install
+    $ nanoc compile
+    Loading site data...
+    Compiling site...
+       identical  [0.00s]  output/css/960.css
+       identical  [0.00s]  output/css/pygments.css
+       identical  [0.00s]  output/css/reset.css
+       identical  [0.00s]  output/css/styles.css
+       identical  [0.00s]  output/css/uv_active4d.css
+          update  [0.28s]  output/index.html
+          update  [1.31s]  output/v3/gists/comments/index.html
+          update  [1.92s]  output/v3/gists/index.html
+          update  [0.25s]  output/v3/issues/comments/index.html
+          update  [0.99s]  output/v3/issues/labels/index.html
+          update  [0.49s]  output/v3/issues/milestones/index.html
+          update  [0.50s]  output/v3/issues/index.html
+          update  [0.05s]  output/v3/index.html
+
+    Site compiled in 5.81s.
+
+You can setup whatever you want to view the files.  If you have the adsf
+gem, however (I hope so, it was in the Gemfile), you can start Webrick:
+
+    $ nanoc view
+    $ open http://localhost:3000
+
+Compilation times got you down?  Use `guard`!
+
+    $ guard
+
+This starts a web server too, so there's no need to run `nanoc view`.
+
+*One thing: remember to add trailing slashes to all nanoc links!*
 
 
-## Site update
+## Deployment
 
-Make your edits and generate a new website version from the source branch:
+Upload your changes by running this command:
 
-    nanoc
-
-Second and last, push the updated files in the pages branch to Github:
-
-    cd output
-    git add .
-    git commit
-    git push
-
-For more usage help see the [nanoc website](http://nanoc.ws/).
+    $ rake publish
