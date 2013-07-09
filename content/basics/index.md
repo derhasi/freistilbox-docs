@@ -11,3 +11,5 @@ In this section, we'd like to give you the insight into the inner workings of th
 * [The Boxfile](boxfile/)
 * [Filesystem](filesystem/)
 * [Ready-made configuration files](includes/)
+
+And, in case you have questions or problems, here's how you can get hold of our [technical support](support/).
