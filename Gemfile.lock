@@ -51,4 +51,5 @@ DEPENDENCIES
   kramdown
   mime-types
   nanoc
+  rack
   terminal-notifier-guard
