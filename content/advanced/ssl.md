@@ -32,3 +32,12 @@ We recommend you cover all bases by checking both condititions:
 
     RewriteCond %{HTTPS} on [OR]
     RewriteCond %{ENV:HTTPS} on
+
+## Redirecting all unsecure requests to https
+
+To enforce https for all requests you can use the following snippet in
+.htaccess:
+
+    RewriteCond %{HTTPS} !on
+    RewriteCond %{ENV:HTTPS} !on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
