@@ -88,6 +88,16 @@
 RewriteCond %{ENV:HTTPS} on
 </code></pre>
 
+<h2 id="redirecting-all-unsecure-requests-to-https">Redirecting all unsecure requests to https</h2>
+
+<p>To enforce https for all requests you can use the following snippet in
+.htaccess:</p>
+
+<pre><code>RewriteCond %{HTTPS} !on
+RewriteCond %{ENV:HTTPS} !on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</code></pre>
+
           </div>
         </div>
       </div>
