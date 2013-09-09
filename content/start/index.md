@@ -10,3 +10,4 @@ Getting Started with freistilbox
 * [Shell Access](shell/)
 * [SFTP access](sftp/)
 * [Database usage](database/)
+* [Troubleshooting problems](troubleshooting/)
