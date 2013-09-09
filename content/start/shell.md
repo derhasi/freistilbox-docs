@@ -2,6 +2,8 @@
 title: Shell access
 ---
 
+# Shell access
+
 ## SSH
 
 cXXs.freistilbox.net is your own shell server. Every site is represented
@@ -19,6 +21,7 @@ In the directory `current` will find a identical copy of what the
 webservers are using. The currently active deployment of you web
 application resides in `current/docroot`.
 
+
 ## SFTP
 
 With the same user you can access your site using SFTP to transfer files
@@ -26,6 +29,6 @@ from and to your web application.
 
 Your public shared files can be accessed in the directory you defined in
 your [Boxfile](/basics/boxfile/), relative to the directory
-`current/docroot` on the shell host. 
+`current/docroot` on the shell host.
 
 Your private shared folders can be found in `current/private`.

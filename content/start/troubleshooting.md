@@ -2,4 +2,6 @@
 title: "Troubleshooting problems"
 ---
 
-We're happy to support you in solving any problem you have with your web application on our freistilbox hosting platform. Please refer to our Help Center article about [how you can get technical support](https://freistil.zendesk.com/entries/453873).
+# Troubleshooting problems
+
+We'll be happy to support you in solving any problem you have with running your web application on the freistilbox hosting platform. You'll find all important details on the [Technical support](/basics/support) page.
