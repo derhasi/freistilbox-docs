@@ -48,9 +48,9 @@ By replying to an Help Center email, you can add comments to the ticket. Please 
 
 ### Contact via phone
 
-If you decide to call us, you can speed up the support process by first issuing a new support request via web or email. Otherwise, the Help Center agent will create a new ticket for you by gathering the essential details explained in the next section.
+If you decide to call us, you can speed up the support process by first issuing a written new support request. Otherwise, the Help Center agent will create a new ticket for you by asking you for the essential details explained in the next section.
 
-Outside of the 12x5 timeframe, you will be connected to our Help Center voicemail system. To spare you the effort of recording all the problem details explained below, simply provide them to us by first issuing a support request and then simply leave us the ticket ID on voicemail. It will be sent immediately to our on-call engineers who will get back to you after reviewing your support request and analyzing the issue.
+Outside of the 12x5 timeframe, you will be connected to our Help Center voicemail system. To save yourself the effort of recording all the problem details explained below, please provide them to us in a written support request and then simply leave us the ticket ID on voicemail. Your message will be sent immediately to our on-call engineers who will get back to you immediately after reviewing your support ticket.
 
 
 ## Essential details
