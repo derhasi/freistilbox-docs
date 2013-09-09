@@ -48,9 +48,15 @@
             <li class="active"></li>
           </ul>
           <div id="content">
-            <p>Deactivate caching.</p>
+            <h1 id="why-is-server-time-running-aheadbehind-of-my-own">Why is server time running ahead/behind of my own?</h1>
 
-<p>http://winscp.net/eng/docs/directory_cache</p>
+<p>Our servers use <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated Universal Time</a> (UTC) as their time zone. This has several reasons.</p>
+
+<p>First of all, UTC is the primary time standard by which the world regulates clocks and time.</p>
+
+<p>It is also ideal for running server clocks because it doesn’t have the incontinuities introduced by summer time where in spring, one hour is skipped, and in fall, one occurs twice in a row.</p>
+
+<p>Running the internal clocks of our servers in UTC doesn’t necessarily mean they also have to report time in that zime zone, though; we’re free to chose every time zone we like. But which one? Both our team members and our customers are located in different time zones. And since almost everyone knows how many hours their local time is offset against UTC, we chose UTC as the best common denominator.</p>
 
           </div>
         </div>
