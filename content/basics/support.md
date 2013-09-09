@@ -9,9 +9,9 @@ Our Help Center team is there to help you with any question or problem you encou
 
 ## Support levels
 
-We offer two support levels, Standard Support and Premium Support. The most easy to spot difference is that Standard Support is available "12x5", i.e. from 06:00 to 18:00 UTC (08:00-20:00 CET) on weekdays. With a Premium Support contract, you can reach our on-call support "24x7" — around the clock on any day. Due to our limited on-call capacity, support outside the 12x5 timeframe applies exclusively to production emergencies.
+We offer two support levels, Standard Support and Premium Support. Standard Support is available "12x5", weekdays from 06:00 to 18:00 (UTC).
 
-Premium Support comes with more advantages, though, and you can find all the details on the [freistilbox website](http://www.freistilbox.com/support-levels/).
+With a Premium Support contract, you can reach our on-call support "24x7" — around the clock on any day. (Due to our limited on-call capacity, support outside the 12x5 timeframe applies exclusively to production emergencies.) Premium Support comes with even more advantages, and you can find all the details on the [freistilbox website](http://www.freistilbox.com/support-levels/).
 
 
 ### Upgrading to Premium Support
