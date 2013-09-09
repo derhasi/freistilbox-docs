@@ -48,15 +48,13 @@
             <li class="active">Access to asset files</li>
           </ul>
           <div id="content">
-            <p>SFTP für files
-Username: s123
-Hostname: cXXs.freistilbox.net</p>
+            <h1 id="access-to-asset-files">Access to asset files</h1>
 
-<p>We have separated the Drupal installation files from the asset directories like <code>sites/default/files</code>. This has several reasons:</p>
+<p>We have separated the files with application code from the asset files that are user-generated. This has several reasons:</p>
 
 <ol>
-  <li>While it’s useful to have all your software components (Drupal core, contrib modules, themes etc.) under version control, it makes no sense to do so for asset files. Many of these files will be created and modified by Drupal on the web frontend, for example by the “imagecache” module.</li>
-  <li>For performance reasons, the Drupal installation and the asset files are stored in different places on the freistilbox hosting platform. </li>
+  <li>While it’s useful to have all your software components (core application, 3rd party add-ons, themes etc.) under version control, it makes no sense to do so for asset files. Many of these files will be created and modified by your application on the web frontend.</li>
+  <li>For performance reasons, application code and asset files are stored in different places on the freistilbox hosting platform.</li>
 </ol>
 
 <p>For these reasons, you maintain asset files not via Git but by accessing them directly using the secure SFTP protocol.</p>
