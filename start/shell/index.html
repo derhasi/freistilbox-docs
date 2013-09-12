@@ -63,15 +63,17 @@
 
 <p>This gives you access to a copy of your complete site environment, including a <a href="/basics/filesystem/">checkout of your document root</a> as well as access to your <a href="/basics/boxfile/">shared folders</a> and <a href="/basics/includes/">prepared configuration files</a>.</p>
 
-<p>In the directory <code>current</code> will find a identical copy of what the webservers are using. The currently active deployment of you web application resides in <code>current/docroot</code>.</p>
+<p>In the directory <code>current</code>, you will find a identical copy of what the application boxes are using to run your website. The currently active deployment of your web application always resides in <code>current/docroot</code>.</p>
+
+<p><span class="label label-warning">Warning</span> During deployment, the <code>current</code> directory will change. When you need to update your application while you work in a shell session, make sure to <code>cd</code> into <code>current</code> again.</p>
 
 <h2 id="sftp">SFTP</h2>
 
-<p>With the same user you can access your site using SFTP to transfer files from and to your web application.</p>
+<p>Using the same user account, you can also access your website’s asset files via SFTP. This enables you to transfer files from and to your web application.</p>
 
-<p>Your public shared files can be accessed in the directory you defined in your <a href="/basics/boxfile/">Boxfile</a>, relative to the directory <code>current/docroot</code> on the shell host.</p>
+<p>Your public shared files (directly available to external HTTP clients) can be found under <code>current/docroot</code>, in the directories you defined as shared folders in the <a href="/basics/boxfile/">Boxfile</a>.</p>
 
-<p>Your private shared folders can be found in <code>current/private</code>.</p>
+<p>Your private shared files (only available to your application) can be found in <code>current/private</code>.</p>
 
           </div>
         </div>
