@@ -4,13 +4,14 @@ title: Shell access
 
 # Shell access
 
-## SSH
-
 Each freistilbox cluster has its own shell server, independent of the web application boxes on which your application runs. The shell server's hostname is `cNNs.freistilbox.net` where "NN" is the numeric ID of your freistilbox cluster, for example `c42s.freistilbox.net`.
 
 Every application instance on your cluster has its own user account, for example `s123`.
 
-With your instance ID, you can log in like this:
+
+## SSH
+
+With your instance ID, you can log in to your shell server like this:
 
     ssh s123@c42s.freistilbox.net
 
