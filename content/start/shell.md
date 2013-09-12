@@ -16,13 +16,15 @@ With your instance ID, you can log in like this:
 
 This gives you access to a copy of your complete site environment, including a [checkout of your document root](/basics/filesystem/) as well as access to your [shared folders](/basics/boxfile/) and [prepared configuration files](/basics/includes/).
 
-In the directory `current` will find a identical copy of what the webservers are using. The currently active deployment of you web application resides in `current/docroot`.
+In the directory `current`, you will find a identical copy of what the application boxes are using to run your website. The currently active deployment of your web application always resides in `current/docroot`.
+
+<span class="label label-warning">Warning</span> During deployment, the `current` directory will change. When you need to update your application while you work in a shell session, make sure to `cd` into `current` again.
 
 
 ## SFTP
 
-With the same user you can access your site using SFTP to transfer files from and to your web application.
+Using the same user account, you can also access your website's asset files via SFTP. This enables you to transfer files from and to your web application.
 
-Your public shared files can be accessed in the directory you defined in your [Boxfile](/basics/boxfile/), relative to the directory `current/docroot` on the shell host.
+Your public shared files (directly available to external HTTP clients) can be found under `current/docroot`, in the directories you defined as shared folders in the [Boxfile](/basics/boxfile/).
 
-Your private shared folders can be found in `current/private`.
+Your private shared files (only available to your application) can be found in `current/private`.
