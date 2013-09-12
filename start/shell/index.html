@@ -50,13 +50,13 @@
           <div id="content">
             <h1 id="shell-access">Shell access</h1>
 
-<h2 id="ssh">SSH</h2>
-
 <p>Each freistilbox cluster has its own shell server, independent of the web application boxes on which your application runs. The shell server’s hostname is <code>cNNs.freistilbox.net</code> where “NN” is the numeric ID of your freistilbox cluster, for example <code>c42s.freistilbox.net</code>.</p>
 
 <p>Every application instance on your cluster has its own user account, for example <code>s123</code>.</p>
 
-<p>With your instance ID, you can log in like this:</p>
+<h2 id="ssh">SSH</h2>
+
+<p>With your instance ID, you can log in to your shell server like this:</p>
 
 <pre><code>ssh s123@c42s.freistilbox.net
 </code></pre>
