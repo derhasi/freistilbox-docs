@@ -50,10 +50,20 @@
           <div id="content">
             <h1 id="database">Database</h1>
 
-<p>The database configuration can be included in Drupal settings.php by
-using <code>require_once('../config/drupal/settings-d7-dbXXX.php');</code>.</p>
+<p>We provide pre-populated configuration snippets that you can simply include in your application configuration.</p>
 
-<p>You can find it on the <a href="/start/shell/">shell host</a> in the directory <code>current/config/drupal/</code> as well.</p>
+<h2 id="drupal">Drupal</h2>
+
+<p>To include a configuration snippet, you just need a single line:</p>
+
+<pre><code>require_once('../config/drupal/settings-d7-dbXXX.php');
+</code></pre>
+
+<p>Obviously, you need to replace “dbXXX” with the database ID we gave you in the installation message for your application instance. If your application uses Drupal 6, replace “d7” with “d6”.</p>
+
+<p><span class="label label-warning">Warning</span> Make sure to add this line at the end of your <code>settings.XYZ.php</code> so its settings can’t be overridden by other configuration entries.</p>
+
+<p>If you’d like to see the contents of the configuration snippet, you can find it on the <a href="/start/shell/">shell host</a> under <code>current/config/drupal/</code>.</p>
 
           </div>
         </div>
