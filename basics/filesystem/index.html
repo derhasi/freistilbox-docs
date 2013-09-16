@@ -61,9 +61,21 @@
   <li>destroy version consistency throughout the cluster, because the other cluster nodes would not reflect that local change.</li>
 </ol>
 
-<p>There is no reliable way of feeding local changes back into the central repository. That’s why we don’t allow Drupal write access to its own distribution files at all. All changes to your Drupal installation have to come via the central Git repository.</p>
+<p>There is no reliable way of feeding local changes back into the central repository. That’s why we don’t allow web applications any write access to their own distribution files. All changes to your application code need to come from the central Git repository.</p>
 
-<p>Of course, changes to asset files (by way of file uploads or by the ImageCache module, for example) must be possible. On our freistilbox hosting platform, Drupal’s write access – and that’s important for you to know – is limited to its <em>public and private file system paths</em> and the <em>temporary directory</em>. In a later section, we’ll show you how to configure them properly.</p>
+<p>Of course, changes to asset files (by way of file uploads or by the ImageCache module, for example) must be possible. On our freistilbox hosting platform, write access is limited to its <em>public and private file system paths</em> and the <em>temporary directory</em>.</p>
+
+<h2 id="shared-storage">Shared storage</h2>
+
+<p>Because asset files saved by your application need to be available to all freistilbox nodes, they are stored on a central storage cluster. Your application, on the other hand, is stored locally on each freistilbox (for performance reasons).</p>
+
+<p>That’s why you need to tell freistilbox which directories in your application file tree should be shared between boxes. With Drupal as an example, you’d declare <code>sites/default/files</code> as shared. You do this in your application’s <a href="boxfile/">Boxfile</a>.</p>
+
+<p>For storage of asset files that need to be protected from direct access by HTTP clients, freistilbox provides the directory <code>../private</code>, relative to your application’s <code>docroot</code>. Like the public asset file folders you’ve defined by your <code>Boxfile</code>, this directory is also stored on the central storage cluster.</p>
+
+<h2 id="temporary-files">Temporary files</h2>
+
+<p>If your application creates temporary files (during uploads, for example), please use the path <code>../tmp</code>, relative to your application’s <code>docroot</code>. This directory is created automatically.</p>
 
           </div>
         </div>
