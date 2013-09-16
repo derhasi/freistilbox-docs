@@ -22,7 +22,7 @@ Of course, changes to asset files (by way of file uploads or by the ImageCache m
 
 Because asset files saved by your application need to be available to all freistilbox nodes, they are stored on a central storage cluster. Your application, on the other hand, is stored locally on each freistilbox (for performance reasons).
 
-That's why you need to tell freistilbox which directories in your application file tree should be shared between boxes. With Drupal as an example, you'd declare `sites/default/files` as shared. You do this in your application's [Boxfile](boxfile/).
+That's why you need to tell freistilbox which directories in your application file tree should be shared between boxes. With Drupal as an example, you'd declare `sites/default/files` as shared. You do this in your application's [Boxfile](../boxfile/).
 
 For storage of asset files that need to be protected from direct access by HTTP clients, freistilbox provides the directory `../private`, relative to your application's `docroot`. Like the public asset file folders you've defined by your `Boxfile`, this directory is also stored on the central storage cluster.
 
