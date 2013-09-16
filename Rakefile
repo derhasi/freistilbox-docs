@@ -24,7 +24,7 @@ def commit_message
   mesg.gsub(/'/, '') # to allow this to be handed off via -m '#{message}'
 end
 
-desc "Publish to http://docs.freistilbox.com.com"
+desc "Publish to http://docs.freistilbox.com"
 task :publish => [:clean] do
   mesg = commit_message
 
