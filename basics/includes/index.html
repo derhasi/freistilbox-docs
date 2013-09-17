@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>freistilbox docs - Includes</title>
+  <title>freistilbox docs - Pre-configured settings snippets</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
   <link href="/style.css" rel="stylesheet" type="text/css" media="screen">
@@ -45,18 +45,16 @@
             
             <li><a href="/basics/">freistilbox Basics</a></li> <span class="divider">/</span>
             
-            <li class="active">Includes</li>
+            <li class="active">Pre-configured settings snippets</li>
           </ul>
           <div id="content">
-            <p>TODO: Translate to English</p>
+            <h1 id="pre-configured-settings-snippets">Pre-configured settings snippets</h1>
 
-<h1 id="fertige-includes-zur-automatischen-konfiguration">Fertige Includes zur automatischen Konfiguration</h1>
+<p>In the <code>current</code> directory, you’ll find a subdirectory named <code>config</code> with CMS-specific configuration snippets. You can include these snippets into your web application settings to have important services configured automatically.</p>
 
-<p>Das Verzeichnis <code>current</code> enthält ein Unterverzeichnis <code>config</code>, in dem CMS-spezifische, vorbereitete Dateien liegen, die direkt eingebunden werden können, um bestimmte Aspekte der Webapplikation zu konfigurieren.</p>
+<p>In PHP, you can include such a snippet simply with the statement <code>require_once('../config/$CMS/$CONF');</code> (this path is relative to your <code>docroot</code>).</p>
 
-<p>Diese können aus einer Konfigurationsdatei des CMS mittels <code>require_once('../config/$CMS/$DATEINAME');</code> (Pfadangabe ist relativ relativ zum Document Root) eingebunden werden.</p>
-
-<p>Beispiel: <code>settings.php</code> einer Drupal-7-Site</p>
+<p>Example: <code>settings.php</code> for a Drupal 7 site</p>
 
 <pre><code>&lt;?php
 require_once('../config/drupal/settings-d7-db123.php');
@@ -64,14 +62,14 @@ require_once('../config/drupal/settings-d7-site.php');
 ?&gt;
 </code></pre>
 
-<h2 id="drupal">Drupal</h2>
+<h2 id="drupal-configuration-snippets">Drupal configuration snippets</h2>
 
 <ul>
-  <li>Drupal 7 Datenbankkonfiguration: <code>settings-d7-dbXXX.php</code></li>
-  <li>Drupal 6 Datenbankkonfiguration: <code>settings-d6-dbXXX.php</code></li>
-  <li>Diverse Settings für Drupal 7 (momentan reverse_proxy): <code>settings-d7-site.php</code></li>
-  <li>Diverse Settings für Drupal 6 (momentan reverse_proxy): <code>settings-d6-site.php</code></li>
+  <li>Database configuration: <code>settings-d7-dbXXX.php</code> (replace “dbXXX” with the database name mentioned in the installation details of your site instance)</li>
+  <li>Miscellaneous settings (e.g. <code>reverse_proxy</code>): <code>settings-d7-site.php</code></li>
 </ul>
+
+<p>For Drupal 6 sites, simply replace “d7” with “d6”.</p>
 
           </div>
         </div>

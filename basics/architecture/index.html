@@ -50,19 +50,19 @@
           <div id="content">
             <h1 id="distributed-architecture">Distributed Architecture</h1>
 
-<p>TODO: Write introductory paragraph about performance, availability, scalability.</p>
+<p>freistilbox is much more than a single hosted server. It consists ofa multitude of services running on different servers but integrated into a complete hosting platform. Built-in redundancy on many levels allows you to scale the performance and optimize the availability of your web application as you need. The complexity that comes with such a powerful infrastructure is hidden as we take care of everything.</p>
 
-<p><strong>Boxes:</strong> On the freistilbox hosting platform, your web application is installed on one or more application servers (“boxes”), together called the “freistilbox cluster”. </p>
+<p>These are the main components of the freistilbox managed hosting platform:</p>
 
-<p><strong>SSL offloader:</strong> TODO: Write description</p>
+<p><strong>Edge Router:</strong> The Edge Router accepts incoming requests and decides which freistilbox cluster is responsible for handling it. SSL requests are decrypted immediately so that later stages need to deal with plain HTTP requests only.</p>
 
-<p><strong>Load balancer:</strong> TODO: Write description</p>
+<p><strong>Application Servers:</strong> On the freistilbox hosting platform, your web application is installed on one or more application servers or “boxes” for short. This set of boxes is called your “freistilbox cluster”. </p>
 
-<p><strong>Caches:</strong> TODO: Write description</p>
+<p><strong>Load balancer:</strong> In front of each freistilbox cluster, there is a redundant pair of load balancers that distribute incoming requests between all available application boxes. If possible, the content responses are cached on the load balancer so that subsequent requests for the same content can be answered immediately without involving an application box.</p>
 
-<p><strong>Shell box:</strong> To give you manual access to your website’s asset files and the opportunity to do a remote login and execute commands directly in the freistilbox environment, another box is added to your freistilbox cluster especially for these purposes.</p>
+<p><strong>Shell box:</strong> To give you manual access to your website’s asset files and the opportunity to do a remote login and execute commands directly in the freistilbox environment, a dedicated box is added to your freistilbox cluster especially for these purposes.</p>
 
-<p><strong>Backend:</strong> Your web application will probably use several backend services, for example MySQL, shared storage or Apache Solr. These services run on dedicated clusters that are usually shared by a limited number of customers.</p>
+<p><strong>Backend services:</strong> Your web application will depend on several backend services, for example a MySQL database, a shared storage or an Apache Solr search engine. These services run on dedicated clusters that are usually shared by a limited number of customers.</p>
 
           </div>
         </div>
