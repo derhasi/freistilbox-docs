@@ -1,25 +1,23 @@
 ---
-title: Includes
+title: Pre-configured settings snippets
 ---
 
-TODO: Translate to English
+# Pre-configured settings snippets
 
-# Fertige Includes zur automatischen Konfiguration
+In the `current` directory, you'll find a subdirectory named `config` with CMS-specific configuration snippets. You can include these snippets into your web application settings to have important services configured automatically.
 
-Das Verzeichnis `current` enthält ein Unterverzeichnis `config`, in dem CMS-spezifische, vorbereitete Dateien liegen, die direkt eingebunden werden können, um bestimmte Aspekte der Webapplikation zu konfigurieren.
+In PHP, you can include such a snippet simply with the statement `require_once('../config/$CMS/$CONF');` (this path is relative to your `docroot`).
 
-Diese können aus einer Konfigurationsdatei des CMS mittels `require_once('../config/$CMS/$DATEINAME');` (Pfadangabe ist relativ relativ zum Document Root) eingebunden werden.
-
-Beispiel: `settings.php` einer Drupal-7-Site
+Example: `settings.php` for a Drupal 7 site
 
     <?php
     require_once('../config/drupal/settings-d7-db123.php');
     require_once('../config/drupal/settings-d7-site.php');
     ?>
 
-## Drupal
+## Drupal configuration snippets
 
-* Drupal 7 Datenbankkonfiguration: `settings-d7-dbXXX.php`
-* Drupal 6 Datenbankkonfiguration: `settings-d6-dbXXX.php`
-* Diverse Settings für Drupal 7 (momentan reverse_proxy): `settings-d7-site.php`
-* Diverse Settings für Drupal 6 (momentan reverse_proxy): `settings-d6-site.php`
+* Database configuration: `settings-d7-dbXXX.php` (replace "dbXXX" with the database name mentioned in the installation details of your site instance)
+* Miscellaneous settings (e.g. `reverse_proxy`): `settings-d7-site.php`
+
+For Drupal 6 sites, simply replace "d7" with "d6".
